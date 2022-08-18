@@ -1,0 +1,666 @@
+body {
+    background-color: #2C3333;
+}
+
+
+.top-content {
+    height: 250px;
+    width: 550px;
+    margin-top: 100px;
+    margin-left: 50px;
+
+
+}
+
+#Digital {
+
+    font-size: 60px;
+    letter-spacing: 2px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+.photo1 {
+    height: 150px;
+    width: 150px;
+    border-radius: 70%;
+    float: right;
+    margin-right: 300px;
+
+}
+
+
+#man1 {
+    height: 150px;
+    width: 150px;
+    border-radius: 80px;
+}
+
+.manname1 {
+    /* float: right; */
+    margin-top: -25px;
+    margin-left: 85%;
+}
+
+#mannameinid1 {
+    color: white;
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.content2 {
+    height: 380px;
+    width: 680px;
+
+
+}
+
+#contentwords2 {
+    font-size: 70px;
+    text-align: left;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: underline 8px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    color: white;
+
+
+}
+
+
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-right: 0%;
+        width: 100%;
+    }
+
+}
+
+.rightside
+
+{
+    margin-right: 5%;
+}
+.square1 {
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    margin-left: 60%;
+}
+
+
+.squarecontent1 {
+    height: 150px;
+    width: 450px;
+
+    margin-left: 60%;
+    margin-top: 50px;
+
+
+}
+
+#squarecontents1 {
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.readmorebox {
+
+    height: 50px;
+    width: 120px;
+    background-color: yellow;
+    margin-left: 60%;
+    padding-top: 3px;
+    margin-top: 20px;
+}
+
+#readmore1 {
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.readmorebox:hover {
+    background-color: violet
+}
+
+#readmore1:hover {
+    color: white
+}
+
+
+.square2 {
+    height: 30px;
+    width: 30px;
+    background-color: green;
+    margin-left: 60%;
+    margin-top: 70px;
+
+}
+
+
+.squarecontent2 {
+    height: 150px;
+    width: 450px;
+    margin-left: 60%;
+    margin-top: 50px;
+
+}
+
+
+#squarecontents2
+
+{
+
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+.readmorebox2
+
+{
+    height: 50px;
+    width: 120px;
+    background-color: yellow;
+    margin-left: 60%;
+    padding-top: 3px;
+    margin-top: 20px;
+
+}
+
+
+#readmoreboxwords2
+
+{
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.readmorebox2:hover {
+    background-color: violet
+}
+
+#readmoreboxwords2:hover {
+    color: white
+}
+
+
+.Number1
+
+{
+    height: 20px;
+    width: 20px;
+
+}
+
+
+#One
+{
+    color: white;
+    margin-left: 25px;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: underline 5px;
+}
+
+
+.leftsidecontent1
+
+{
+
+    height: 150px;
+    width: 500px;
+    background-color: white;
+    margin-left: 50px;
+    background-color: #2C3333;
+}
+
+
+#leftsidepara1
+
+{
+    font-size: 27px;
+    line-height: 38px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+
+
+}
+.Numbers2
+
+{
+
+    height: 20px;
+    width: 20px;
+    margin-top: 100px;
+
+}
+
+
+#Two
+
+{
+    color: white;
+    margin-left: 25px;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: underline 5px;
+}
+.leftsidecontent2
+
+{
+    height: 150px;
+    width: 500px;
+    background-color: white;
+    margin-left: 50px;
+    background-color: #2C3333;
+
+}
+
+
+#leftsidepara2
+
+{
+    font-size: 27px;
+    line-height: 38px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}
+
+
+.manphoto2
+
+{
+    height: 200px;
+    width: 200px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 60%;
+    margin-top: -480px;
+    margin-right: 80px;
+
+}
+
+#manphoto2
+
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.manphoto2name
+
+{
+
+    height: 30px;
+    width: 300px;
+    background-color: #2C3333;
+    margin-left: 75%;
+
+}
+
+#man2name
+
+{
+    font-size: 25px;
+    color: green;
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: underline 10px;
+
+}
+
+
+.women
+
+{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: wheat;
+    margin-left: 60%;
+    margin-top: 50px;
+
+}
+
+
+#womenphoto1
+
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.nameofwomen
+
+{
+
+    height: 30px;
+    width: 300px;
+    margin: -50px 0px 0px 200px;
+    padding-bottom: 100px;
+
+}
+
+#womenname
+
+{
+
+    font-size: 25px;
+    color: green;
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: underline 10px;
+}
+
+
+
+.left-percentage
+
+{
+
+    height: 100px;
+    width: 250px;
+    margin-top: 150px;
+    margin-left: 50px;
+
+}
+
+
+#leftpercent
+
+{
+
+    font-size: 70px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    color: white;
+    padding-right: 70px;
+
+
+
+}
+
+
+.underlinepercent
+
+
+{
+
+    height: 10px;
+    width: 350px;
+    background-color: green;
+    margin-left: 80px;
+    padding-right: 20px;
+}
+
+
+.contentforleftpercent
+
+{
+    height: 200px;
+    width: 550px;
+    margin-left: 80px;
+}
+
+#contentforleftpercentage
+
+{
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    line-height: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    font-stretch: expanded;
+}
+
+
+.freecontainer
+
+{
+
+    height: 50px;
+    width: 150px;
+    background-color: rgb(12, 231, 12);
+    margin-left: 250px;
+    
+   
+
+}
+
+
+#free
+
+{
+    padding-top: 3px;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    font-family:  'Roboto Slab', serif;
+    
+}
+
+
+.dollar
+
+{
+    height: 80px;
+    width: 120px;
+    margin-left: 10px;
+
+}
+
+#dollarentity
+
+{
+    color: yellow;
+    font-size: 35px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 10px;
+    text-align: center;
+}
+
+
+.listcontainer
+
+{
+    height: 250px;
+    width: 250px;
+    margin-top: 120px;
+    margin-left: 200px;
+
+}
+
+
+.ul1
+
+{
+
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+#li1
+{
+
+    color: yellow;
+}
+
+
+.Individualcontainer
+
+{
+
+    height: 50px;
+    width: 200px;
+    background-color: rgb(12, 231, 12);
+    margin-left: 600px;
+    margin-top: -455px;
+
+}
+
+#Indiviual
+
+{
+
+    padding-top: 3px;
+    font-size: 35px;
+    text-align: center;
+    margin-top: -5px;
+    color: white;
+    font-family:  'Roboto Slab', serif;
+}
+
+
+.withmoney
+
+{
+    height: 80px;
+    width: 120px;
+    margin-left: 620px;
+    margin-top: 20px;
+}
+
+#twentynine
+
+{
+
+    color: yellow;
+    font-size: 35px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 20px;
+    text-align: center;
+}
+
+
+.listcontainer2
+
+{
+    height: 250px;
+    width: 250px;
+    margin-top: 120px;
+    margin-left:  600px;
+    margin-top: 52px;
+
+}
+
+
+.ul2
+
+{
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+
+#li2
+{
+    color: yellow;
+}
+
+
+.Businesscontainer
+
+{
+    height: 50px;
+    width: 170px;
+    background-color: rgb(12, 231, 12);
+    margin-left: 250px;
+
+}
+
+#Businesswords
+
+{
+
+    color: white;
+    font-size: 35px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.money2
+
+{
+
+    padding-top: 25x;
+}
+
+
+#money59
+
+{
+    color: yellow;
+    font-size: 35px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.container3
+
+{
+
+    height: 250px;
+    width: 250px;
+    margin-top: 120px;
+    /* margin-left:  600px; */
+    margin-top: 52px;
+    padding-top: 30px;
+}
+
+
+.ul3
+
+{
+
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+#li3
+
+{
+
+    color: yellow;
+
+}
+
+
+.Business
+
+{
+    float : right;
+    margin-right: 150px;
+    margin-top: -470px;
+}

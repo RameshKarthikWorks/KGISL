@@ -1,0 +1,148 @@
+/* Menu */
+#menu
+
+{
+    font-size: 25px;
+    font-style: oblique;
+    background-color: #2f3e46;
+    color: white;
+border: 1px solid ;
+margin-right: 80%;
+margin-top: -8px;
+height: 800px;
+width: 250px;
+}
+
+/* Design Menu */
+#designs
+
+{
+    padding-bottom: 150px;
+}
+
+/* company Menu */
+#company
+{
+    padding-bottom: 150px;
+
+}
+
+/* Gallery Menu */
+#Gallery
+
+{
+    padding-bottom: 150px;
+
+}
+
+/* contact Menu */
+#contact
+
+{
+    padding-bottom: 150px;
+}
+/* Header With Company Name */
+#CompanyName
+{
+    margin-top: -61%;
+    margin-left: 18.7%;
+    background-color: #2f3e46;
+    height: 150px;
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid;
+}
+
+
+/* container1 */
+.container1
+{
+    margin-right: 150%;
+    margin-left: 20%;
+    background-color: #a2d2ff ;
+    width: 250px;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+
+#smallcoloum
+
+{
+    width: 250px;
+    height: 300px;
+}
+
+/* container2 */
+.container2
+{
+    margin-right: 500px;
+    margin-top: 200px;
+    margin-left:  350px;
+    background-color: black;
+    width: 250px;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+
+
+#finger
+{
+    width: 250px;
+    height: 300px;
+}
+
+/* container3 */
+.container3
+{
+ 
+    margin-right: 500%x;
+    margin-top: -650px;
+    margin-left:  785px;
+    margin-bottom: 100%;
+    background-color: #2f3e46;
+    width: 250px;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+
+#Building
+{
+    width: 250px;
+    height: 300px;
+}
+
+/* container4 */
+.container4
+{
+ 
+    margin-right: 500px;
+    margin-left: 1000px;
+    margin-top: -1250px;
+    background-color: black;
+    width: 250px;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+
+#Notebook
+{
+    height: 300px;
+    width: 250px;
+}
+
+
+#footer
+{
+    text-align: center;
+}
+
+/* backgroundcontainer in middle */
+#backgroundcontainer
+{
+    margin-top: -50px;
+    background-color: #2f3e46;
+    height: 500px;
+    width: 1500px;
+  border: 1px solid #ccc;
+}
