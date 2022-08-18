@@ -1,0 +1,43 @@
+1. sudo apt update
+2. sudo apt upgrade
+3. sudo apt install curl
+
+NODEJS
+4.sudo apt install nodejs
+5.crul -sL https://ded.nodesource.com/setup_14.x | sudo -E bash -
+6.sudo apt-get install -y nodejs
+7.sudo apt install npm
+
+MYSQL 
+8.sudo apt install mysql-server
+9.mysql --version
+10.sudo mysql_secure_installation
+11.sudo mysql
+12.sudo apt install mysql-workbench
+
+NETBEANS
+13.sudo apt install default-jdk
+14.sudo snap install netbeans --classic
+
+GITHUB 
+15.sudo apt-get update
+16.sudo apt-get install git-all
+
+VSCODE
+Download from browser
+
+
+
+
+
+
+
+
+
+
+SQL installation step ubuntu
+Step - 1 : https://hevodata.com/learn/installing-mysql-on-ubuntu-20-04/
+
+Step - 2 : https://phoenixnap.com/kb/mysql-workbench-ubuntu
+
+Step - 3 : https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
