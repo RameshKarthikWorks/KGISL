@@ -1,0 +1,593 @@
+@media only screen and (min-width:320px) and (max-width:480px)
+{
+    body{
+        background-color: red;
+    }
+}
+
+body
+
+{
+    background-color: rgb(247, 247, 0);
+    font-family: 'Roboto Slab', serif;
+}
+
+.maindiv
+
+{
+
+    height: 1800px;
+    width: 800px;
+    background-color: rgb(56, 56, 56);
+    margin-left: 300px;
+    margin-top: -10px;
+}
+
+.topcontainer
+
+{
+
+    height: 150px;
+    width: 400px;
+    margin-top: 10px;
+   /*border: 1px solid black; */
+    margin-left: 200px;
+}
+
+.topcontainer h1
+
+{
+
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+.topcontainer > p
+{
+
+    color: yellow;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline 2px;
+}
+
+
+.tables
+
+{
+
+    height: 200px;
+    width: 250px;
+    /*border: 1px solid black; */
+    margin-top: 50px;
+    padding-left: 25px;
+}
+
+.tables1
+
+{
+    height: 200px;
+    width: 250px;
+    /*border: 1px solid black; */
+    margin-top: -250px;
+    margin-left :250px;
+}
+
+
+.tables2
+{
+    height: 200px;
+    width: 250px;
+    /*border: 1px solid black; */
+    margin-top: -200px;
+    margin-left :500px;
+    padding-left: 22px;
+
+}
+
+.content1
+
+{
+
+    height: 50px;
+    width: 100px;
+    /*border: 1px solid black; */
+
+}
+.content1 i
+{
+    color: yellow;
+}
+.content1 h1
+
+{
+    font-size: 10px;
+    color: yellow;
+
+}
+
+.content1 >p
+{
+    font-size: 8px;
+    color: white;
+} 
+
+
+.content2
+
+{
+    margin-top: 100px;
+    padding-top: -10px;
+
+}
+
+.content2num
+
+{
+    color: yellow;
+}
+
+
+.content2 i
+
+{
+    color: yellow;
+}
+
+.content2 h1
+
+{
+    font-size: 10px;
+    color: yellow;
+
+}
+
+
+.content2 p
+{
+    font-size: 8px;
+    color: white;
+} 
+
+.content3 i
+{
+    color: yellow;
+}
+
+.content3 h1
+
+{
+    font-size: 10px;
+    color: yellow;
+}
+
+.content3 p
+
+{
+    font-size: 8px;
+    color: white;
+    padding-top: -10px;
+}
+.content4 i
+{
+    color: yellow;
+}
+
+.content4 h1
+{
+    font-size: 10px;
+    color: yellow;
+}
+
+.content4 p
+
+{
+    font-size: 8px;
+    color: white;
+    padding-top: -10px;
+
+}
+
+.content4 i
+{
+    color: yellow;
+}
+
+.content4 h1
+{
+    font-size: 10px;
+    color: yellow;
+}
+
+.content4 p{
+    font-size: 8px;
+    color: white;
+    padding-top: -10px;
+}
+
+.content5 i{
+    color: yellow;
+}
+.content5 h1
+{
+    font-size: 10px;
+    color: yellow;
+}
+.content5 p
+{
+    font-size: 8px;
+    color: white;
+    padding-top: -10px;
+
+}
+
+
+.middlecontainer
+
+{
+    height: 500px;
+    width: 750px;
+    /* border: 1px solid wheat; */
+    margin-top: 80px;
+    margin-right: 10px;
+    padding-left: 25px;
+    background-color: black;
+}
+
+
+.middlecontent
+
+{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+.middlecontent p
+{color: yellow;
+font-size: 10px;
+text-align: center;
+text-transform: uppercase;
+text-decoration: underline 2px;
+}
+
+.listingmoney ul li
+
+{
+
+    display: inline-block;
+    list-style: none;
+    color: yellow;
+    padding: 75px;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+/* .listingheader ul li 
+
+{
+
+    display: inline-flex;
+}
+
+.listingpara
+
+{
+    color: white;
+    font-size: 5px;
+}
+h6
+
+{
+
+    color: white;
+    font-size: 5px;
+} */
+
+
+.line1
+
+{
+
+    height: 150px;
+    width: 200px;
+   /*border: 1px solid black; */
+    margin-top: -50px;
+    margin-left: 50px;
+
+}
+
+.line1 h1 
+{
+    color: white;
+    font-size: 10px;
+}
+
+.line1 p
+
+{
+    color: white;
+    font-size: 8px;
+    text-align: center;
+}
+
+
+.get
+
+{
+    height: 25px;
+    width: 40px;
+    background-color: yellow;
+   /*border: 1px solid black; */
+    margin-top: 25px;
+    margin-left: 75px;
+
+
+}
+
+.get p
+
+{
+    color: black;
+}
+
+.line2
+{
+
+
+height: 150px;
+    width: 200px;
+   /*border: 1px solid black; */
+    margin-top: -150px;
+    margin-left: 275px;
+
+}
+.line2 h1{
+    color: white;
+    font-size: 10px;
+}
+
+.line2 p
+
+{
+    color: white;
+    font-size: 8px;
+    text-align: center;
+
+}
+
+.get2
+
+{
+    height: 25px;
+    width: 40px;
+    background-color: yellow;
+   /*border: 1px solid black; */
+    margin-top: 25px;
+    margin-left: 75px;
+
+}
+
+.get2 p
+
+{
+    color: black;
+}
+
+
+.line3
+
+
+{
+    height: 150px;
+    width: 200px;
+   /*border: 1px solid black; */
+    margin-top: -150px;
+    margin-left: 500px;
+
+}
+
+.line3 h1
+
+{
+    color: white;
+    font-size: 10px;
+}
+
+
+.line3 p
+{
+    color: white;
+    font-size: 8px;
+    text-align: center;
+}
+
+.get3
+
+
+{
+    height: 25px;
+    width: 40px;
+    background-color: yellow;
+   /*border: 1px solid black; */
+    margin-top: 25px;
+    margin-left: 75px;
+}
+
+
+.get3 p
+
+{
+    color: black;
+}
+
+.backgroudimage
+
+{
+    height: 250px;
+    width: 765px;
+   /*border: 1px solid black; */
+margin-top: 50px;
+background-size: cover;
+opacity: 0.8;
+background-position: top;
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSThtdlfVUcgEc8XPyQGQahsuIAEckJHO1h-Q&usqp=CAU");
+
+
+}
+
+.image2
+
+{
+    
+    height: 250px;
+    width: 765px;
+   
+}
+
+
+.searchbox
+
+{
+    height: 40px;
+    width: 350px;
+   /*border: 1px solid black; */
+    margin-top: -100px;
+    margin-left: 150px;
+}
+
+#text2
+
+{
+    height: 40px;
+    width: 350px;
+
+
+}
+
+
+.footerlist
+
+{
+
+    height: 160px;
+    width: 150px;
+   /*border: 1px solid black; */
+    margin-top: 140%;
+    margin-left: 25%;
+
+}
+
+.footerlist h1
+
+{
+    color: white;
+    font-size: 12px;
+}
+
+.footerlist ul li
+{
+    color: white;
+    list-style: none;
+    font-size: 10px;
+    margin: 20px;
+}
+
+.footerlist2
+
+{
+    height: 160px;
+    width: 150px;
+   /*border: 1px solid black; */
+    margin-top: -21.5%;
+    margin-left: 45%;
+}
+
+.footerlist2 h1
+
+{
+    color: white;
+    list-style: none;
+    font-size: 12px;
+    margin: 20px;
+    padding-top: -15px;
+}
+
+.footerlist2 ul li
+
+{
+    color: white;
+    list-style: none;
+    font-size: 10px;
+    margin: 20px;
+}
+
+
+.companydetails
+
+
+{
+    height: 160px;
+    width: 300px;
+    margin-left: 600px;
+    margin-top: -150px;
+}
+
+.companydetails h1
+{
+    font-size: 10px;
+    color: white;
+}
+
+address
+{
+    color: white;
+}
+
+
+.sample
+{
+    color: yellow;
+}
+
+.sample ul li
+{
+    font-size: 25px;
+}
+
+.l2
+
+{
+    margin-left: 15px;
+    margin-top: -33px;
+}
+
+.l3
+{
+
+    margin-left: 28px;
+    margin-top: -33px;
+}
+
+.sample h1
+
+{
+    color: yellow;
+    margin-top: -300px;
+}
+
+.sample h1::first-letter
+{
+    color: white;
+}
+
+
+.companydetails h1::first-letter
+{
+    font-size: 25px;
+}
