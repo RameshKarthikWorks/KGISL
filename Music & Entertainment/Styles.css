@@ -1,0 +1,84 @@
+body
+
+{
+    background-color: black;
+}
+
+.container1forbg
+
+{
+
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-image: url("https://static.wixstatic.com/media/f69047_6f3f70088d394dd796eabb8a02c09032~mv2.jpg/v1/fill/w_696,h_552,al_c,q_85,enc_auto/f69047_6f3f70088d394dd796eabb8a02c09032~mv2.jpg");
+}
+
+.conatiner2letterG h1
+
+{
+
+    color: violet;
+    position: absolute;
+    left: 650px;
+    top: 150px;
+    font-size: 150px;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.containerforheaderwords
+
+{
+
+    height: 150px;
+    width: 250px;
+
+}
+
+.containerforheaderwords h2 {
+
+    color: white;
+    position: absolute;
+    left: 850px;
+    top: 30px;
+    font-size: 100px;
+}
+
+.containerforheaderwords >p {
+
+    color: white;
+    position: absolute;
+    left: 850px;
+    top: 350px;
+    text-align: left;
+    font-family: 'Roboto Slab', serif;
+
+
+}
+
+.readmore
+
+{
+    height: 50px;
+    width: 150px;
+    border: 1px solid white;
+    position: absolute;
+    top: 450px;
+    left: 900px;
+}
+
+
+.readmore p
+{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.readmore:hover{
+   
+    background-color: white;
+    
+}
