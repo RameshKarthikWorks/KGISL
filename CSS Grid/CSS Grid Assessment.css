@@ -1,0 +1,156 @@
+.col-1 { width: 8.33%; float: left;}
+
+.col-2 { width: 16.66%; float: right; height: 75px;}
+
+.col-3 { width: 25%; float: left;}
+
+.col-4 { width: 33.33%; float: left; }
+
+.col-5 { width: 41.66%; float: left;}
+
+.col-6 { width: 50%; float: left; height: 150px; }
+
+.col-7 { width: 58.33%; float: left;}
+
+.col-8 { width: 66%; float: left;}
+
+.col-9 { width: 75%; float: left;}
+
+.col-10 { width: 83.33%; float: left;}
+
+.col-11 { width: 91.66%; float: left;}
+
+.col-12 { width: 100%; float: left; height: 200h1x;}
+
+@media only screen and (max-width:480px)
+
+{
+
+    [class*="col-"]
+    {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:1024px)
+
+{
+
+    [class*="col-"]
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:320px)
+
+{
+
+    [class*="col-2"]
+    {
+        width: 30%;
+    }
+}
+
+.bg1
+
+{
+    background-color: rgb(40, 40, 160);
+   
+}
+
+.bg1 h1
+
+{
+    text-align: center;
+    color: white;
+    
+}
+
+.bg2
+
+{
+    background-color: rgb(233, 86, 86);
+}
+
+
+.bg2 h1
+
+{
+    text-align: center;
+    color: white;
+    
+}
+
+
+.bg3
+
+{
+    background-color: rgb(110, 110, 196);
+    
+    
+}
+
+.bg3 h1
+{
+    color: white;
+    text-align: center;
+}
+
+
+.bg4{
+
+    background-color: rgb(30, 30, 90);
+    color: white;
+    text-align: center;
+}
+
+.bg4 h1
+
+{
+    text-align: center;
+    color: white;
+}
+
+.bg5
+
+{
+    background-color: aqua;
+
+}
+
+.bg5 h1
+{
+    color: black;
+    text-align: center;
+}
+
+
+.bg6
+
+{
+    background-color: rgb(157, 202, 157);
+  
+}
+
+.bg6  h1
+{
+    text-align: center;
+    color: black;
+}
+
+
+.bg7
+
+{
+    background-color: orange;
+}
+
+.bg7  h1
+
+{
+    text-align: center;
+    color: black;
+}
+

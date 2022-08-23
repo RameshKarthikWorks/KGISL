@@ -1,0 +1,77 @@
+.col-1 { width: 8.33%; float: left; height: 50px;}
+
+.col-2 { width: 16.66%; float: left; height: 150%;}
+
+.col-3 { width: 25%; float: left; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px;}
+
+.col-4 { width: 33.33%; float: left; }
+
+.col-5 { width: 41.66%; float: left;}
+
+.col-6 { width: 50%; float: left; height: 150px; }
+
+.col-7 { width: 58.33%; float: left;}
+
+.col-8 { width: 66%; float: left;}
+
+.col-9 { width: 75%; float: left;}
+
+.col-10 { width: 83.33%; float: left;}
+
+.col-11 { width: 91.66%; float: left;}
+
+.col-12 { width: 100%; float: left; height: 50px; background-color: aliceblue; border: 2px solid black}
+
+
+.bg1
+
+{
+    background-color: rgb(1, 1, 126);
+    margin-top: -50px;
+}
+
+.bg1 ul li
+{
+    color:white;
+    font-size: 20px;
+    padding: 20px 0;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.ul2 h5
+{
+    font-family: 'Roboto Slab', serif;
+    color: white;
+    text-align: center;
+    margin-left: 25px;
+    text-decoration: underline 3px;
+}
+
+.ul2 ul li
+{
+    font-size: 20px;
+}
+
+.threedots
+{
+
+    color: white;
+}
+
+.bg1 h5
+{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    margin-right: 180px;
+    text-decoration: underline 5px;
+}
+
+.col-11 >div
+{
+    margin-top: 15px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 250px;
+    margin: 0px 5px 0px 0px;
+}
