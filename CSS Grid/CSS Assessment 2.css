@@ -1,10 +1,10 @@
 .col-1 { width: 8.33%; float: left; height: 50px;}
 
-.col-2 { width: 16.66%; float: left; height: 150%;}
+.col-2 { width: 16.66%; float: left;}
 
-.col-3 { width: 25%; float: left; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-left-radius: 3px; border-top-right-radius: 3px;}
+.col-3 { width: 25%; float: left; border: 1px solid black; height: 500px;}
 
-.col-4 { width: 33.33%; float: left; }
+.col-4 { width: 33.33%; float: left; height: 50px;}
 
 .col-5 { width: 41.66%; float: left;}
 
@@ -23,11 +23,18 @@
 .col-12 { width: 100%; float: left; height: 50px; background-color: aliceblue; border: 2px solid black}
 
 
+body
+{
+
+    font-family: 'Roboto Slab', serif;
+}
+
 .bg1
 
 {
-    background-color: rgb(1, 1, 126);
+    background-color:#293462;
     margin-top: -50px;
+    box-sizing: border-box;
 }
 
 .bg1 ul li
@@ -72,6 +79,311 @@
 {
     margin-top: 15px;
     font-family: 'Roboto Slab', serif;
-    margin-left: 250px;
-    margin: 0px 5px 0px 0px;
+    margin-left: 400px;
+    padding: 5px;
+    font-size: 10px;
+
 }
+
+.bg3
+{
+    /* margin-left: 20px; */
+}
+
+.list1
+
+{
+    margin-left: -25px;
+}
+
+.bg2
+{
+    box-sizing: border-box;
+    border: 1px solid black;
+
+    
+
+}
+.bg3
+
+{
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.bg4
+
+{
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+.bg2 ul li
+{
+    display: inline-block;
+    padding: 3px;
+    font-size: 12px;
+
+}
+.bg3 ul li
+{
+    display: inline-block;
+    padding: 3px;
+    font-size: 12px;
+
+}
+
+.bg4 ul li
+{
+    display: inline-block;
+    padding: 3px;
+    font-size: 12px;
+
+}
+.bg5 ul li
+{
+    display: inline-block;
+    padding: 3px;
+    font-size: 12px;
+    border: 1px solid black;
+
+}
+
+
+
+.bg5
+
+{
+    box-sizing: border-box;
+    border: 0.5px solid black;
+}
+
+.col6
+
+{
+    display: inline-flex;
+}
+
+.commit
+
+{
+
+    display: inline-flex;
+    margin-top: -20px;
+}
+.commit1>p
+
+{
+
+    font-size: 8px;
+    margin: 5px;
+    line-height: 20px;
+}
+
+.icon1
+
+{
+    font-size: 12px; 
+}
+.commit2>p
+{
+    font-size: 8px;
+    margin-left: 50px;
+
+    line-height: 20px;
+}
+
+.buttons
+
+{
+    display: inline-flex;
+    margin-top: 20px;
+    
+}
+
+.button1
+
+{
+    width: 60px;
+    height: 20px;
+    margin-left: 50px;
+    background-color: rgb(36, 36, 253);
+    color: white;
+ border:none;
+ font-weight: bolder;
+}
+
+.button2
+
+{
+    width: 60px;
+    height: 20px;
+    margin-left: 50px;
+    background-color:white;
+    color:black;
+    font-weight: bolder;
+
+}
+
+.footercommit
+
+{
+    margin-top: -650px;
+    margin-left: 50px;
+}
+
+.footercommit button
+{
+    width: 75px;
+    height: 35px;
+    background-color: rgba(190, 228, 233, 0.959);
+    border: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.rightside
+
+{
+    border: 1px solid black;
+    margin-left: 661.10px;
+}
+
+@media only screen and (max-width:1024)
+{
+
+    [class*="col-"]{
+
+        width: 100%;
+
+
+
+    }
+}
+
+body
+{
+    box-sizing: border-box;
+}
+
+.bg6
+
+{
+ box-sizing: border-box;
+    background-color:white;
+    outline-style: groove;
+    margin-top: -200px;
+
+}
+
+.bg6 ul li
+
+{
+    list-style: none;
+    padding: 25px;
+}
+
+.centercontent
+
+{
+    padding-top: 200px;
+}
+
+.bgmid
+
+{
+    border: 3px solid white;
+
+}
+
+.bgmid ul li
+{
+    display: inline-flex;
+    margin: 15px;
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    font-weight: bolder;
+
+} 
+
+.bgtopmid p
+
+{
+    font-family: 'Roboto Slab', serif;
+}
+
+.pipeline
+
+{
+    height: 20px;
+    width: 80px;
+    background-color: rgb(41, 41, 228);
+    margin-left: 750px;
+}
+
+.pipeline> p
+{
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bolder;
+    font-size: 10px;
+    text-align: center;
+   
+
+}
+
+
+@media only screen and (max-width:480px)
+
+{
+    .bgtopmid{
+        width: 50%;
+
+    }
+}
+
+@media only screen and (max-width:1024px)
+
+{
+    .centercontent{
+        width: 50%;
+
+    }
+}
+
+@media only screen and (max-width:480px)
+
+{
+    .bg1
+    {
+        width: 50%;
+
+    }
+}
+
+
+@media only screen and (max-width:480px)
+
+{
+    .bg6
+    {
+        width: 50%;
+
+    }
+}
+
+
+@media only screen and (max-width:480px)
+
+{
+    .bg6 ul li
+    {
+        width: 100%;
+
+    }
+}
+
+
+
+
+
+
