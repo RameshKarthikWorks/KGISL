@@ -1,0 +1,164 @@
+.col-1 {
+    width: 8.33%;
+    float: left;
+}
+
+.col-2 {
+    width: 16.66%;
+    float: left;
+}
+
+.col-3 {
+    width: 25%;
+    float: left;
+}
+
+.col-4 {
+    width: 33.33%;
+    float: left;
+}
+
+.col-5 {
+    width: 41.66%;
+    float: left;
+}
+
+.col-6 {
+    width: 50%;
+    float: left;
+}
+
+.col-7 {
+    width: 58.33%;
+    float: left;
+}
+
+.col-8 {
+    width: 66%;
+    float: left;
+}
+
+.col-9 {
+    width: 75%;
+    float: left;
+}
+
+.col-10 {
+    width: 83.33%;
+    float: left;
+}
+
+.col-11 {
+    width: 91.66%;
+    float: left;
+}
+
+.col-12 {
+    width: 100%;
+    float: left;
+}
+
+*
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+
+
+}
+
+
+.menucontainer
+{
+    background-color: gold;
+}
+
+.menucontainer ul li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0px 55px 0px 55px;
+    padding: 2px;
+}
+
+ /* @media only screen and (min-width:320px)
+{
+    [class*="col-"]
+    {
+        width:100%;
+    }
+} */
+
+/* @media only screen and (max-width:320px)
+{
+    .menucontainer
+    {
+        width:100%;
+    }
+}  */
+
+
+.left{
+
+    background-color: gold;
+    margin-top: 10px;
+}
+
+.leftmenu
+
+{
+    float: left;
+}
+
+.left ul li
+{
+    margin: 40px 0px 40px 0px;
+    list-style: none;
+
+}
+
+@media only screen and (min-width)
+{
+    .left ul  li{
+        width: 30%;
+
+    }
+}
+
+.right
+
+{
+    background-color: rgb(249, 240, 185);
+    border: 1px solid black;
+    float: right;
+    margin-top: -453px;
+    height: 450px;
+}
+ 
+label
+
+{
+    margin: 10px 15px 10px 15px;
+
+}
+input
+
+{
+    margin: 10px 15px 10px 15px;
+}
+
+select
+
+{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+
+
+@media only screen and (max-width:320px)
+{
+    .right
+    {
+        width:80%;
+    }
+}

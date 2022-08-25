@@ -2,7 +2,7 @@
 
 .col-2 { width: 16.66%; float: left;}
 
-.col-3 { width: 25%; float: left; border: 1px solid black; height: 500px;}
+.col-3 { width: 25%; float: left; height: 500px;}
 
 .col-4 { width: 33.33%; float: left; height: 50px;}
 
@@ -378,6 +378,19 @@ body
     .bg6 ul li
     {
         width: 100%;
+
+    }
+}
+
+@media only screen and (max-width:480px)
+
+{
+    body
+    {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
 
     }
 }

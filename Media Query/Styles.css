@@ -1,0 +1,341 @@
+.col-1 {
+    width: 8.33%;
+    float: left;
+}
+
+.col-2 {
+    width: 16.66%;
+    float: right;
+    height: 75px;
+}
+
+.col-3 {
+    width: 25%;
+    float: left;
+}
+
+.col-4 {
+    width: 33.33%;
+    float: left;
+}
+
+.col-5 {
+    width: 41.66%;
+    float: left;
+}
+
+.col-6 {
+    width: 50%;
+    float: left;
+    height: 150px;
+}
+
+.col-7 {
+    width: 58.33%;
+    float: left;
+}
+
+.col-8 {
+    width: 66%;
+    float: left;
+}
+
+.col-9 {
+    width: 75%;
+    float: left;
+}
+
+.col-10 {
+    width: 83.33%;
+    float: left;
+}
+
+.col-11 {
+    width: 91.66%;
+    float: left;
+}
+
+.col-12 {
+    width: 100%;
+    float: left;
+    height: 200h1x;
+}
+
+.col-4 {
+    border: 1px solid black;
+    height: 330px;
+}
+
+
+
+
+.container1 {
+    background-image: url("https://thumbs.dreamstime.com/b/business-professionals-discussing-computer-desk-office-60564830.jpg");
+    height: 100px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+
+
+}
+
+.content {
+    background-color: rgb(63, 62, 62);
+
+}
+
+.content h1 {
+
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+
+.content p {
+
+    font-size: 12px;
+    text-indent: 20px;
+    color: white;
+}
+
+.content input {
+    margin-left: 175px;
+}
+
+h6 {
+    color: white;
+
+}
+
+.backgroundcolor {
+    height: 150px;
+    width: 210px;
+    border: 1px solid black;
+    background-color: yellow;
+    margin: auto;
+}
+
+
+
+.container2 {
+    background-image: url("https://media.istockphoto.com/photos/portrait-of-a-man-using-a-computer-in-a-modern-office-picture-id1344688156?k=20&m=1344688156&s=612x612&w=0&h=KXhmbh-u9uw_HLDUTiDTT36_75qkwnpjGN725w58IvU=");
+    height: 100px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+.content2 {
+    background-color: rgb(63, 62, 62);
+
+}
+
+
+
+.content2 h1 {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.content2 p {
+    font-size: 12px;
+    text-indent: 20px;
+    color: white;
+}
+
+.content2 input {
+    margin-left: 175px;
+}
+
+.content3 {
+    background-color: rgb(63, 62, 62);
+}
+
+.container3 {
+    background-image: url("https://media.istockphoto.com/photos/testing-software-picture-id1017296544?k=20&m=1017296544&s=612x612&w=0&h=I34gSez0j2HGciCztsZH09XiO142NLRmNIyFoJ-0U4M=");
+    height: 100px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+.content3 h1 {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.content3 p {
+    font-size: 12px;
+    text-indent: 20px;
+    color: white;
+}
+
+.content3 input {
+    margin-left: 175px;
+}
+
+
+@media only screen and (max-width:480px) {
+    [class*="col-"] {
+
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:768px) {
+    .content2 {
+
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .content2 {
+
+        background-color: black;
+    }
+}
+
+
+
+@media only screen and (max-width:768px) {
+    .content3 {
+
+        background-color: blue;
+    }
+}
+@media only screen and (max-width:768px) {
+.content3 p {
+    font-size: 12px;
+    text-indent: 20px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+}
+
+@media only screen and (max-width:480px) {
+    .content3 {
+
+        background-color: green;
+    }
+}
+
+
+@media only screen and (max-width:768px) {
+    .content {
+
+        background-color: rgb(57, 40, 11);
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .content {
+
+        background-color: rgba(0, 0, 0, 0.378);
+    }
+}
+
+
+
+@media only screen and (max-width:768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+@media only  screen and(max-width:480px) {
+    .bg2 {
+
+        position: absolute;
+        top:150px;
+    }
+}
+
+
+@media only  screen and (max-width:480px) {
+    .backgroundcolor{
+
+        background-color: aqua;
+    }
+}
+
+
+@media only  screen and (max-width:480px) {
+    .col-4{
+
+        width:100%;
+        display: block;
+    }
+}
+
+@media only  screen and (max-width:480px) {
+    .col-4{
+
+        width:100%;
+        display: block;
+    }
+}
+
+@media only  screen and (max-width:1024px) {
+    .container3{
+
+        background-image: url("https://media.istockphoto.com/photos/portrait-of-a-man-using-a-computer-in-a-modern-office-picture-id1344688156?k=20&m=1344688156&s=612x612&w=0&h=KXhmbh-u9uw_HLDUTiDTT36_75qkwnpjGN725w58IvU=");
+    }
+    .content3 p {
+        font-size: 35px;
+        text-indent: 30px;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+
+@media only  screen and (max-width:480px) {
+    .container2{
+
+        background-image: url("https://media.istockphoto.com/photos/testing-software-picture-id1017296544?k=20&m=1017296544&s=612x612&w=0&h=I34gSez0j2HGciCztsZH09XiO142NLRmNIyFoJ-0U4M=");
+    }
+    .content2 p {
+        font-size: 12px;
+        text-indent: 25px;
+        color: white;
+        font-family: sans-serif;
+    }
+}
+
+@media only  screen and (max-width:780px) {
+    .container1{
+
+        background-image: url("https://media.istockphoto.com/photos/profile-view-of-young-female-programmer-working-on-computer-software-picture-id1125595211?k=20&m=1125595211&s=612x612&w=0&h=L8YX_1mH6cZMAf8Dzjh3ODZvKm6WvqczPN0Y4NAwv60=");
+    }
+}
+
+
+@media only  screen and (max-width:780px) {
+    button{
+
+       border-radius: 10px;
+    }
+}
+* {
+    box-sizing: border-box;
+  }
+
+
+@media only  screen and (max-width:1024px) {
+    .main{
+
+       display: inline-flex;
+    }
+}
+
