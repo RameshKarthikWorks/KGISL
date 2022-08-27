@@ -1,0 +1,71 @@
+.menu ul li
+
+
+{
+
+    color: white;
+    list-style: none;
+    display: inline-block;
+    padding: 0px 3px 0px 3px;
+    margin-left: 120px;
+    font-weight: bold;
+}
+
+
+.heading
+
+{
+    color: white;
+    font-weight: bolder;
+    margin-top: 5px;
+    font-size: 25px;
+
+}
+
+.heading p::first-letter
+{
+
+    color:black;
+}
+
+
+/* .booking
+
+{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.dropdown
+
+{
+    margin-top: 25px;
+}
+.dropdown select
+{
+    width: 100px;
+}
+
+.timing
+
+{
+    margin-top: 25px;
+}
+
+.timing input{
+    width: 100px;
+}
+
+.buttonforregister
+
+{
+    margin-top: 25px;
+    outline-style: none;
+
+} */
+
+.buttonforregister input
+{
+    background-color: crimson;
+
+}

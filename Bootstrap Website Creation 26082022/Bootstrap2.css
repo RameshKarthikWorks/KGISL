@@ -1,0 +1,192 @@
+.menu ul li
+
+
+{
+
+    color: white;
+    list-style: none;
+    display: inline-block;
+    padding: 0px 3px 0px 3px;
+    margin-left: 120px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.heading
+
+{
+    color: white;
+    font-weight: bolder;
+    margin-top: 5px;
+    font-size: 25px;
+
+}
+
+.heading p::first-letter
+{
+
+    color:black;
+}
+
+
+.content1 
+{
+
+
+    background-color: white;
+    opacity: 0.4;
+}
+
+.content1 h5
+{
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline 5px;
+}
+.content1 p
+{
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+
+}
+
+
+@media only screen and (max-width:325px)
+{
+    .cards{
+
+        position: absolute;
+
+    }
+}
+
+
+.card1
+
+{
+    margin: 0px 10px 0px 10px;
+}
+
+.card2
+{
+
+    margin: 0px 10px 0px 10px;
+}
+
+
+.card3
+{
+    margin: 0px 10px 0px 10px;
+
+}
+
+
+
+
+
+.para p
+{
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.footer
+
+{
+    height: 70px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.footer ul li
+{
+    display: inline-block;
+    padding: 25px;
+    color: white;
+    font-weight: bolder;
+}
+
+.image2
+
+{
+    height: 160px;
+    width: 300px;
+    background-size: cover;
+}
+
+.gallery
+
+{
+    height: 1500px;
+}
+
+.galleryimage1
+
+{
+    height: 300px;
+    width: 300px;
+    background-image: url("https://pbs.twimg.com/media/FPrzqRhVcAEL-cL.jpg:large");
+    background-size: cover;
+    background-position: top;
+    box-shadow: inset;
+}
+
+.galleryimage2
+{
+    height: 300px;
+    width: 300px;
+    background-image: url("https://images.immediate.co.uk/production/volatile/sites/3/2019/03/09B_AEG_DomPayoff_1Sht_REV-7c16828.jpg?resize=620,413?quality=90&resize=620,414");
+    background-size: cover;
+    background-position: top;
+    box-shadow: inset;
+
+}
+
+
+.backgroundcolorblack
+
+{
+    height: 400px;
+    width: 450px;
+    border: 1px solid black;
+    margin-left: 350px;
+    background-color: black;
+    margin-top: 25px;
+
+}
+
+.galleryimage1 h1
+
+{
+    color: white;
+
+}
+
+.galleryheading1 h1
+{
+
+    color:white;
+    margin-left: 460px;
+    margin-top: 100px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.gallerypara
+
+{
+    height: 170px;
+    width: 1125px;
+    background-color: black;
+    margin-left: 120px;
+}
+
+.gallerypara p
+{
+    color:white;
+    text-align: left;
+}
