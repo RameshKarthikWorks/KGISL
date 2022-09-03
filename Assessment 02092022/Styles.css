@@ -1,0 +1,46 @@
+.menulist1 ul li
+
+{
+
+    list-style: none;
+}
+
+.bg2
+
+{
+
+    background-image: url("http://lerablog.org/wp-content/uploads/2013/05/responsive-web-design.jpg");
+    height: 650px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(172, 244, 244);
+   
+}
+
+
+.bg3
+
+{
+    background-color: aqua;
+    font-family: 'Lobster', cursive;
+}
+
+img
+
+{
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+}
+
+.stars
+{
+
+    list-style: none;
+}
+
+.shoppica
+
+{
+    font-family: 'Lobster', cursive;
+}

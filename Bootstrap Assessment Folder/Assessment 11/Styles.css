@@ -1,0 +1,46 @@
+.bg
+
+{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/vr-banner-bg.png");
+    background-size: cover;
+    border:1px solid black;
+    height: 800px;
+}
+
+.bg1 {
+
+    margin-left: 450px;
+    margin-top: 400px;
+
+}
+
+.bg1 button{
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+@media only screen and (min-width:576px) and (max-width:768px) 
+{
+
+    .bg1{
+        
+        position: absolute;
+        right: 10px;
+        bottom: 300px;
+
+
+    }
+    
+    .bg1 button{
+        
+        position: absolute;
+        right: 350px;
+
+
+    }
+    .bg1 p
+    {
+        font-size: 70px;
+        font-weight: bolder;
+    }
+}
