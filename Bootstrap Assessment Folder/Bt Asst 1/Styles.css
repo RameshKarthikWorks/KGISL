@@ -1,0 +1,45 @@
+.bg1
+
+{
+    background-image: url("https://c1.wallpaperflare.com/preview/753/188/860/man-sky-cloud-person.jpg");
+    height: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.imageheading
+
+{
+
+    color: white;
+    font-size: 35px;
+    text-align: justify;
+}
+
+.imageheading button
+{
+    background-color: transparent;
+    color: white;
+    font-weight: bolder;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+ul li
+{
+    list-style: none;
+    border: 2px solid black;
+
+}
+
+
+.image1
+
+{
+    background-image: url("https://c1.wallpaperflare.com/preview/753/188/860/man-sky-cloud-person.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    height: 300px;
+}
