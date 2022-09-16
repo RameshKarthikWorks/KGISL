@@ -1,0 +1,127 @@
+mysql> select date_format('2000-12-23 23:59:59', '%W' );
++-------------------------------------------+
+| date_format('2000-12-23 23:59:59', '%W' ) |
++-------------------------------------------+
+| Saturday                                  |
++-------------------------------------------+
+1 row in set (0.00 sec)
+mysql> select concat('Monday,the Thirty-First of July,2000');
++------------------------------------------------+
+| concat('Monday,the Thirty-First of July,2000') |
++------------------------------------------------+
+| Monday,the Thirty-First of July,2000           |
++------------------------------------------------+
+1 row in set (0.00 sec)
+mysql> select adddate('2000-12-23 23:59:59', interval 25 year);
++--------------------------------------------------+
+| adddate('2000-12-23 23:59:59', interval 25 year) |
++--------------------------------------------------+
+| 2025-12-23 23:59:59                              |
++--------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from empdetails;
++--------+----------+------------+---------+
+| emp_id | emp_name | hirdate    | day     |
++--------+----------+------------+---------+
+|    101 | Arjun   | 2010-09-23 | Tuesday |
+|    102 | Ranjan     | 2017-03-31 | Monday  |
+|    103 | Venkat     | 2021-06-01 | Firday  |
++--------+----------+------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_name , hirdate, day from empdetails where day='Monday';
++----------+------------+--------+
+| emp_name | hirdate    | day    |
++----------+------------+--------+
+| Ranjan     | 2017-03-31 | Monday |
++----------+------------+--------+
+1 row in set (0.00 sec)
+
+mysql> select timestampdiff(year,'1950-01-26','2022-01-26');
++-----------------------------------------------+
+| timestampdiff(year,'1950-01-26','2022-01-26') |
++-----------------------------------------------+
+|                                            72 |
++-----------------------------------------------+
+1 row in set (0.00 sec)
+mysql> insert into empdetails values(104,'Ranjan Guru','1981-02-16','Monday');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from empdetails;
++--------+-----------+------------+---------+
+| emp_id | emp_name  | hirdate    | day     |
++--------+-----------+------------+---------+
+|    101 | Arjun    | 2010-09-23 | Tuesday |
+|    102 | Ranjan      | 2017-03-31 | Monday  |
+|    103 | Venkat      | 2021-06-01 | Firday  |
+|    104 | Ranjan Guru | 1981-02-16 | Monday  |
++--------+-----------+------------+---------+
+4 rows in set (0.00 sec)
+mysql> select emp_name , hirdate from empdetails where hirdate like '1981_%';
++-----------+------------+
+| emp_name  | hirdate    |
++-----------+------------+
+| Ranjan Guru | 1981-02-16 |
++-----------+------------+
+
+mysql> create table salary (emp_First_name varchar(20),emp_Last_name varchar(20),salary double(10,2));
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+
+mysql> desc salary;
++----------------+--------------+------+-----+---------+-------+
+| Field          | Type         | Null | Key | Default | Extra |
++----------------+--------------+------+-----+---------+-------+
+| emp_First_name | varchar(20)  | YES  |     | NULL    |       |
+| emp_Last_name  | varchar(20)  | YES  |     | NULL    |       |
+| salary         | double(10,2) | YES  |     | NULL    |       |
++----------------+--------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into salary values('Venkat','Ramanan',15000),('kottai','Ranjan',30000),('Ranjan','Guru',25000);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from salary;
++----------------+---------------+----------+
+| emp_First_name | emp_Last_name | salary   |
++----------------+---------------+----------+
+| Venkat           | Ramanan         | 15000.00 |
+| kottai         | Ranjan          | 30000.00 |
+| Ranjan           | Guru          | 25000.00 |
++----------------+---------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_Last_name,salary, salary*3 as Dream_salary from salary;
++---------------+----------+--------------+
+| emp_Last_name | salary   | Dream_salary |
++---------------+----------+--------------+
+| Ramanan         | 15000.00 |     45000.00 |
+| Ranjan          | 30000.00 |     90000.00 |
+| Guru          | 25000.00 |     75000.00 |
++---------------+----------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_name,commission_amount, case when commission_amount >1000 then 'YES'else'NO' end as comm from commission;
++------------+-------------------+------+
+| emp_name   | commission_amount | comm |
++------------+-------------------+------+
+| varatharaj |              6000 | YES  |
+| Venkat       |              NULL | NO   |
+| Ranjan       |              3000 | YES  |
+| Guru       |              NULL | NO   |
++------------+-------------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select JOB_ID, case JOB_ID when 'President' then 'A' when 'Manager' then 'B' when 'Analyst' then 'C' when 'Salesman' then 'D' when 'Clerk' then 'E' else 'O' end JOB_GRADE from job;
++-----------+-----------+
+| JOB_ID    | JOB_GRADE |
++-----------+-----------+
+| President | A         |
+| Manager   | B         |
+| Analyst   | C         |
+| Salesman  | D         |
+| Clerk     | E         |
+| Others    | O         |
++-----------+-----------+
+6 rows in set (0.00 sec)

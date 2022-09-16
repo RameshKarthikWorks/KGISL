@@ -1,0 +1,179 @@
+mysql> select upper ('I love my India');
++---------------------------+
+| upper ('I love my India') |
++---------------------------+
+| I LOVE MY INDIA           |
++---------------------------+
+
+
+mysql> select lower ('CHANGING THE CHARACTERS TO THE LOWER CASE');
++-----------------------------------------------------+
+| lower ('CHANGING THE CHARACTERS TO THE LOWER CASE') |
++-----------------------------------------------------+
+| changing the characters to the lower case           |
++-----------------------------------------------------+
+
+
+select empname from employeedetails where Length(empname) = 5;
+
+mysql> select empname from employeedetails where Length(empname) = 5;
++---------+
+| empname |
++---------+
+| kumar   |
++---------+
+
+mysql> select * from employeedetails;
++-------+---------+------------------+
+| empid | empname | emp_email_id     |
++-------+---------+------------------+
+|     1 | Rajesh  | RajeHR@kgcas.com |
+|     2 | kumar   | kumaIT@kgcas.com |
++-------+---------+------------------+
+
+select empid,empname datediff(emp_hire_date) as experience from employeedetails;
+
+mysql> select emp_hire_date, Till_date,timestampdiff(YEAR,emp_hire_date,Till_date),timestampdiff (MONTH,emp_hire_date,Till_date) from employeed
+etails;
+
+Years & Months
++---------------+------------+---------------------------------------------+-----------------------------------------------+
+| emp_hire_date | Till_date  | timestampdiff(YEAR,emp_hire_date,Till_date) | timestampdiff (MONTH,emp_hire_date,Till_date) |
++---------------+------------+---------------------------------------------+-----------------------------------------------+
+| 2010-01-01    | 2022-09-14 |                                          12 |                                           152 |
+| 2010-05-20    | 2022-09-14 |                                          12 |                                           147 |
++---------------+------------+---------------------------------------------+-----------------------------------------------+
+
+mysql> select emp_hire_date, Till_date,timestampdiff(YEAR,emp_hire_date,Till_date),timestampdiff(DAY,emp_hire_date,Till_date) from employeedetails;
+
+Years & Days
++---------------+------------+---------------------------------------------+--------------------------------------------+
+| emp_hire_date | Till_date  | timestampdiff(YEAR,emp_hire_date,Till_date) | timestampdiff(DAY,emp_hire_date,Till_date) |
++---------------+------------+---------------------------------------------+--------------------------------------------+
+| 2010-01-01    | 2022-09-14 |                                          12 |                                       4639 |
+| 2010-05-20    | 2022-09-14 |                                          12 |                                       4500 |
++---------------+------------+---------------------------------------------+--------------------------------------------+
+
+
+mysql> select char_length(empname) from employeedetails where empname='Ramesh';
++----------------------+
+| char_length(empname) |
++----------------------+
+|                    6 |
++----------------------+
+
+ select empname,salary+(salary*incrementpercentage/100) as incrementsalary from employeedetails;
++---------+-----------------+
+| empname | incrementsalary |
++---------+-----------------+
+| Rajesh  |     8750.312500 |
+| kumar   |    11250.562500 |
+| Ramesh  |    15000.812500 |
++---------+-----------------+
+
+
+mysql> SELECT CURDATE();
++------------+
+| CURDATE()  |
++------------+
+| 2022-09-14 |
++------------+
+
+mysql> select empname,salary,(salary*15/100) as hra,(salary*10/100) as da,(salary*5/100) as pf,(salary+(salary*15/100)+(salary*10/100))-(salary*5/100) as totalsalary from employeedetails;
++---------+----------+-------------+-------------+------------+--------------+
+| empname | salary   | hra         | da          | pf         | totalsalary  |
++---------+----------+-------------+-------------+------------+--------------+
+| Rajesh  |  7000.25 | 1050.037500 |  700.025000 | 350.012500 |  8400.300000 |
+| kumar   |  9000.45 | 1350.067500 |  900.045000 | 450.022500 | 10800.540000 |
+| Ramesh  | 12000.65 | 1800.097500 | 1200.065000 | 600.032500 | 14400.780000 |
++---------+----------+-------------+-------------+------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select concat ('KING','PRESIDENT',5000,10);
++-------------------------------------+
+| concat ('KING','PRESIDENT',5000,10) |
++-------------------------------------+
+| KINGPRESIDENT500010                 |
++-------------------------------------+
+
+
+mysql> select concat (empname,job,salary) from employeedetails;
++--------------------------------+
+| concat (empname,job,salary)    |
++--------------------------------+
+| RajeshManager7000.25           |
+| kumarSenior Supervisior9000.45 |
+| RameshAccountant12000.65       |
++--------------------------------+
+
+
+mysql> select empid,empname,dob from employeedetails;
++-------+---------+------------+
+| empid | empname | dob        |
++-------+---------+------------+
+|     1 | Rajesh  | 1994-08-15 |
+|     2 | kumar   | 1993-05-21 |
+|     3 | Ramesh  | 1991-03-14 |
+
+
+
+mysql> SELECT REPLACE(empname,'m','$') from employeedetails;
++--------------------------+
+| REPLACE(empname,'m','$') |
++--------------------------+
+| Rajesh                   |
+| ku$ar                    |
+| Ra$esh                   |
++--------------------------+
+
+
+mysql> select concat ('****5000 ','5000****');
++---------------------------------+
+| concat ('****5000 ','5000****') |
++---------------------------------+
+| ****5000 5000****               |
++---------------------------------+
+
+
+
+mysql> select emp_hire_date from employeedetails;
++---------------+
+| emp_hire_date |
++---------------+
+| 2010-01-01    |
+| 2010-05-20    |
+| 2015-09-15    |
++---------------+
+
+mysql> select dayname('2010-01-01') from employeedetails where empid=1;
++-----------------------+
+| dayname('2010-01-01') |
++-----------------------+
+| Friday                |
++-----------------------+
+
+mysql> select dayname('2010-05-20'+interval 1 day) from employeedetails where empid=2;
++--------------------------------------+
+| dayname('2010-05-20'+interval 1 day) |
++--------------------------------------+
+| Friday                               |
++--------------------------------------+
+
+mysql> select dayname('2015-09-15'+interval 3 day) from employeedetails where empid=3;
++--------------------------------------+
+| dayname('2015-09-15'+interval 3 day) |
++--------------------------------------+
+| Friday                               |
++--------------------------------------+
+
+mysql> select date(emp_hire_date+interval 100 day),empname,emp_hire_date from employeedetails;
++--------------------------------------+---------+---------------+
+| date(emp_hire_date+interval 100 day) | empname | emp_hire_date |
++--------------------------------------+---------+---------------+
+| 2010-04-11                           | Rajesh  | 2010-01-01    |
+| 2010-08-28                           | kumar   | 2010-05-20    |
+| 2015-12-24                           | Ramesh  | 2015-09-15    |
++--------------------------------------+---------+---------------+
+
+
+

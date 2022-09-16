@@ -1,0 +1,1181 @@
+
+mysql> create assignment;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'assignment' at line 1
+mysql> create database assignment;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> use assignment;
+Database changed
+mysql> create studentprofile(rollno int,name varchar(200),dob date,department varchar(200),city varchar(200));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'studentprofile(rollno int,name varchar(200),dob date,department varchar(200),cit' at line 1
+mysql> create table studentprofile(rollno int,name varchar(200),dob date,department varchar(200),city varchar(200));
+Query OK, 0 rows affected (0.37 sec)
+
+mysql> desc studentprofile;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| rollno     | int          | YES  |     | NULL    |       |
+| name       | varchar(200) | YES  |     | NULL    |       |
+| dob        | date         | YES  |     | NULL    |       |
+| department | varchar(200) | YES  |     | NULL    |       |
+| city       | varchar(200) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+5 rows in set (0.08 sec)
+
+mysql> create marks(rollno int,name varchar(200),mark1 int,mark2 int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'marks(rollno int,name varchar(200),mark1 int,mark2 int)' at line 1
+mysql> create table marks(rollno int,name varchar(200),mark1 int,mark2 int);
+Query OK, 0 rows affected (0.22 sec)
+
+mysql> desc marks;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| rollno | int          | YES  |     | NULL    |       |
+| name   | varchar(200) | YES  |     | NULL    |       |
+| mark1  | int          | YES  |     | NULL    |       |
+| mark2  | int          | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> drop table marks;
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> drop table studentprofile;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> create table employee_det(Emp_id int,Emp_Name varchar(200),Phone_num bigint,Hire_date date,Dept varchar(200),Salary double(10,2),commission double(10,2));
+Query OK, 0 rows affected, 2 warnings (0.17 sec)
+
+mysql> desc employee_det;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| Emp_id     | int          | YES  |     | NULL    |       |
+| Emp_Name   | varchar(200) | YES  |     | NULL    |       |
+| Phone_num  | bigint       | YES  |     | NULL    |       |
+| Hire_date  | date         | YES  |     | NULL    |       |
+| Dept       | varchar(200) | YES  |     | NULL    |       |
+| Salary     | double(10,2) | YES  |     | NULL    |       |
+| commission | double(10,2) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> drop table employee_det;
+Query OK, 0 rows affected (0.19 sec)
+
+
+mysql> create table Employee(Emp_id int,Emp_Name varchar(200),Phone_num bigint,Hire_date date,Dept varchar(200),Salary double(10,2),commission double(10,2));
+Query OK, 0 rows affected, 2 warnings (0.18 sec)
+
+mysql> desc employee;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| Emp_id     | int          | YES  |     | NULL    |       |
+| Emp_Name   | varchar(200) | YES  |     | NULL    |       |
+| Phone_num  | bigint       | YES  |     | NULL    |       |
+| Hire_date  | date         | YES  |     | NULL    |       |
+| Dept       | varchar(200) | YES  |     | NULL    |       |
+| Salary     | double(10,2) | YES  |     | NULL    |       |
+| commission | double(10,2) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1001,'Vishnu',8012657624,'2020-06-06',Manager,9000.90,500);
+ERROR 1054 (42S22): Unknown column 'Manager' in 'field list'
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1001,'Vishnu',8012657624,'2020-06-06','Manager',9000.90,500);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept    | Salary  | commission |
++--------+----------+------------+------------+---------+---------+------------+
+|   1001 | Vishnu     | 8012657624 | 2020-06-06 | Manager | 9000.90 |     500.00 |
++--------+----------+------------+------------+---------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1001,'Vishnu',8012657624,'2020-06-06','Manager',9000.90,500),(1002,'Madhu',8034567624,'2020-09-26','Clerk',8500.90,400),(1003,'Prathap',7502757576,'2020-10-19','Clerk',8500.90,400),(1004,'Naveen',9012652476,'2020-011-16','Clerk',8500.90,400),(1001,'Vishnu',8012657624,'2020-11-09','Accountant',8000.90,300);
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept       | Salary  | commission |
++--------+----------+------------+------------+------------+---------+------------+
+|   1001 | Vishnu     | 8012657624 | 2020-06-06 | Manager    | 9000.90 |     500.00 |
+|   1001 | Vishnu     | 8012657624 | 2020-06-06 | Manager    | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk      | 8500.90 |     400.00 |
+|   1003 | Prathap     | 7502757576 | 2020-10-19 | Clerk      | 8500.90 |     400.00 |
+|   1004 | Naveen     | 9012652476 | 2020-11-16 | Clerk      | 8500.90 |     400.00 |
+|   1001 | Vishnu     | 8012657624 | 2020-11-09 | Accountant | 8000.90 |     300.00 |
++--------+----------+------------+------------+------------+---------+------------+
+6 rows in set (0.00 sec)
+
+mysql> truncate table employee;
+Query OK, 0 rows affected (0.52 sec)
+
+mysql> desc employee;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| Emp_id     | int          | YES  |     | NULL    |       |
+| Emp_Name   | varchar(200) | YES  |     | NULL    |       |
+| Phone_num  | bigint       | YES  |     | NULL    |       |
+| Hire_date  | date         | YES  |     | NULL    |       |
+| Dept       | varchar(200) | YES  |     | NULL    |       |
+| Salary     | double(10,2) | YES  |     | NULL    |       |
+| commission | double(10,2) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1001,'Vishnu',8012657624,'2020-06-06','Manager',9000.90,500),(1002,'Madhu',8034567624,'2020-09-26','Clerk',8500.90,400),(1003,'Prathap',7502757576,'2020-10-19','Clerk',8500.90,400),(1004,'Naveen',9012652476,'2020-011-16','Clerk',8500.90,400),(1001,'Vishnu',8012657624,'2020-11-09','Accountant',8000.90,300);
+Query OK, 5 rows affected (0.12 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept       | Salary  | commission |
++--------+----------+------------+------------+------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager    | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk      | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk      | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk      | 8500.90 |     400.00 |
+|   1001 | Vishnu   | 8012657624 | 2020-11-09 | Accountant | 8000.90 |     300.00 |
++--------+----------+------------+------------+------------+---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> truncate table employee;
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1001,'Vishnu',8012657624,'2020-06-06','Manager',9000.90,500),(1002,'Madhu',8034567624,'2020-09-26','Clerk',8500.90,400),(1003,'Prathap',7502757576,'2020-10-19','Clerk',8500.90,400),(1004,'Naveen',9012652476,'2020-011-16','Clerk',8500.90,400),(1005,'Hari',7842667621,'2020-11-09','Accountant',8000.90,300);
+Query OK, 5 rows affected (0.03 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept       | Salary  | commission |
++--------+----------+------------+------------+------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager    | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk      | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk      | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk      | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant | 8000.90 |     300.00 |
++--------+----------+------------+------------+------------+---------+------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1006,'Saravana',8112657123,'2020-11-29','Accountant',8000.90,300),(1007,'Ram',7845743805,'2020-01-31','No.20',7500.90,300),(1008,'Karthik',7904968827,'2020-12-11','No.20',7500.90,300),(1009,'Prabha',7804778799,'2020-12-16','No.20',7500.90,300),(1010,'Mahe',6384808998,'2021-01-09','Employee',6000.90,200);
+Query OK, 5 rows affected (0.18 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept       | Salary  | commission |
++--------+----------+------------+------------+------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager    | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk      | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk      | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk      | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20      | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20      | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20      | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee   | 6000.90 |     200.00 |
++--------+----------+------------+------------+------------+---------+------------+
+10 rows in set (0.00 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1011,'Rithikesh',6368403839,'2021-03-06','No.20(Data_analyst)',7000.90,250),(1012,'Somesh',6367686124,'2021-04-16','No.20(Data_analyst)',7000.90,250),(1013,'Harrish',7213654789,'2021-4-29','Employee',6000.40,200),(1014,'Vishwa',9629287365,'2021-05-01','Employee',6000.40,200),(1015,'Udhaya',9672414123,'2021-05-09','Emplyoee',6000.40,200),(1016,'Giri',9689904512,'2021-05-29','Emplyoee',6000.40,200);
+Query OK, 6 rows affected (0.10 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1011 | Rithikesh   | 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select sum(Emp_Name) from employee;
++---------------+
+| sum(Emp_Name) |
++---------------+
+|             0 |
++---------------+
+1 row in set, 10 warnings (0.02 sec)
+
+mysql> select sum(Emp_id) from employee;
++-------------+
+| sum(Emp_id) |
++-------------+
+|       16136 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(Emp_id) from employee;
++---------------+
+| count(Emp_id) |
++---------------+
+|            16 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(Salary),sum(Commission) from employee;
++-------------+-----------------+
+| sum(Salary) | sum(Commission) |
++-------------+-----------------+
+|   117012.40 |         4700.00 |
++-------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> select max(Salary) from employee;
++-------------+
+| max(Salary) |
++-------------+
+|     9000.90 |
++-------------+
+1 row in set (0.07 sec)
+
+mysql> select min(hiredate),Emp_name from employee;
+ERROR 1054 (42S22): Unknown column 'hiredate' in 'field list'
+mysql> select min(hire_date),Emp_name from employee;
++----------------+----------+
+| min(hire_date) | Emp_name |
++----------------+----------+
+| 2020-01-31     | Vishnu   |
++----------------+----------+
+1 row in set (0.05 sec)
+
+mysql> select max(hire_date),Emp_name from employee;
++----------------+----------+
+| max(hire_date) | Emp_name |
++----------------+----------+
+| 2021-05-29     | Vishnu   |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select max(hire_date),max(Emp_name) from employee;
++----------------+---------------+
+| max(hire_date) | max(Emp_name) |
++----------------+---------------+
+| 2021-05-29     | Vishwa        |
++----------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select max(hire_date) where max(hire_date);
+ERROR 1054 (42S22): Unknown column 'hire_date' in 'field list'
+mysql> select * from employee where max(hire_date);
+ERROR 1111 (HY000): Invalid use of group function
+mysql> select max(hire_date) from employee group by Emp_id;
++----------------+
+| max(hire_date) |
++----------------+
+| 2020-06-06     |
+| 2020-09-26     |
+| 2020-10-19     |
+| 2020-11-16     |
+| 2020-11-09     |
+| 2020-11-29     |
+| 2020-01-31     |
+| 2020-12-11     |
+| 2020-12-16     |
+| 2021-01-09     |
+| 2021-03-06     |
+| 2021-04-16     |
+| 2021-04-29     |
+| 2021-05-01     |
+| 2021-05-09     |
+| 2021-05-29     |
++----------------+
+16 rows in set (0.00 sec)
+
+mysql> select * from employee max(hire_date);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'max(hire_date)' at line 1
+mysql> select max(hire_date),Emp_name from employee;
++----------------+----------+
+| max(hire_date) | Emp_name |
++----------------+----------+
+| 2021-05-29     | Vishnu   |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1011 | Rithikesh   | 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select * from employee order by Hire_date desc;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1011 | Rithikesh   | 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1004 | Naveen     | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1003 | Prathap     | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1001 | Vishnu     | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select max(Hire_date) from employee order by Hire_date desc;
++----------------+
+| max(Hire_date) |
++----------------+
+| 2021-05-29     |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select max(Hire_date),Emp_Name from employee order by Hire_date desc;
++----------------+----------+
+| max(Hire_date) | Emp_Name |
++----------------+----------+
+| 2021-05-29     | Vishnu     |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select max(Hire_date),Emp_Name from employee order by Hire_date,Emp_id desc;
++----------------+----------+
+| max(Hire_date) | Emp_Name |
++----------------+----------+
+| 2021-05-29     | Vishnu     |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select max(Hire_date),Emp_Name from employee order by Emp_id desc;
++----------------+----------+
+| max(Hire_date) | Emp_Name |
++----------------+----------+
+| 2021-05-29     | Vishnu     |
++----------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee order by Hire_date desc;
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Giri     | 2021-05-29 |
+| Udhaya   | 2021-05-09 |
+| Vishwa   | 2021-05-01 |
+| Harrish  | 2021-04-29 |
+| Somesh   | 2021-04-16 |
+| Rithikesh   | 2021-03-06 |
+| Mahe     | 2021-01-09 |
+| Prabha   | 2020-12-16 |
+| Karthik  | 2020-12-11 |
+| Saravana | 2020-11-29 |
+| Naveen     | 2020-11-16 |
+| Hari     | 2020-11-09 |
+| Prathap     | 2020-10-19 |
+| Madhu    | 2020-09-26 |
+| Vishnu     | 2020-06-06 |
+| Ram      | 2020-01-31 |
++----------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select Emp_Name,max(Hire_date) from employee GROUP BY Hire_date order by Hire_date desc;
++----------+----------------+
+| Emp_Name | max(Hire_date) |
++----------+----------------+
+| Giri     | 2021-05-29     |
+| Udhaya   | 2021-05-09     |
+| Vishwa   | 2021-05-01     |
+| Harrish  | 2021-04-29     |
+| Somesh   | 2021-04-16     |
+| Rithikesh   | 2021-03-06     |
+| Mahe     | 2021-01-09     |
+| Prabha   | 2020-12-16     |
+| Karthik  | 2020-12-11     |
+| Saravana | 2020-11-29     |
+| Naveen     | 2020-11-16     |
+| Hari     | 2020-11-09     |
+| Prathap     | 2020-10-19     |
+| Madhu    | 2020-09-26     |
+| Vishnu     | 2020-06-06     |
+| Ram      | 2020-01-31     |
++----------+----------------+
+16 rows in set (0.00 sec)
+
+mysql> select * from employee order by Hire_date desc;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1011 | Rithikesh|6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select Emp_Name,curdate(Hire_date) from employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Hire_date) from employee' at line 1
+mysql> select Emp_Name,max(Hire_date) from employee GROUP BY Hire_date order by Hire_date desc;
++----------+----------------+
+| Emp_Name | max(Hire_date) |
++----------+----------------+
+| Giri     | 2021-05-29     |
+| Udhaya   | 2021-05-09     |
+| Vishwa   | 2021-05-01     |
+| Harrish  | 2021-04-29     |
+| Somesh   | 2021-04-16     |
+| Rithikesh| 2021-03-06     |
+| Mahe     | 2021-01-09     |
+| Prabha   | 2020-12-16     |
+| Karthik  | 2020-12-11     |
+| Saravana | 2020-11-29     |
+| Naveen   | 2020-11-16     |
+| Hari     | 2020-11-09     |
+| Prathap  | 2020-10-19     |
+| Madhu    | 2020-09-26     |
+| Vishnu   | 2020-06-06     |
+| Ram      | 2020-01-31     |
++----------+----------------+
+16 rows in set (0.00 sec)
+
+
+mysql> select Emp_Name,max(Hire_date) from employee GROUP BY Hire_date order by Hire_date desc;
++----------+----------------+
+| Emp_Name | max(Hire_date) |
++----------+----------------+
+| Giri     | 2021-05-29     |
+| Udhaya   | 2021-05-09     |
+| Vishwa   | 2021-05-01     |
+| Harrish  | 2021-04-29     |
+| Somesh   | 2021-04-16     |
+| Rithikesh| 2021-03-06     |
+| Mahe     | 2021-01-09     |
+| Prabha   | 2020-12-16     |
+| Karthik  | 2020-12-11     |
+| Saravana | 2020-11-29     |
+| Naveen   | 2020-11-16     |
+| Hari     | 2020-11-09     |
+| Prathap  | 2020-10-19     |
+| Madhu    | 2020-09-26     |
+| Vishnu   | 2020-06-06     |
+| Ram      | 2020-01-31     |
++----------+----------------+
+16 rows in set (0.00 sec)
+
+mysql> select Emp_Name,max(Hire_date) from employee order by Hire_date desc;
++----------+----------------+
+| Emp_Name | max(Hire_date) |
++----------+----------------+
+| Vishnu     | 2021-05-29   |
++----------+----------------+
+1 row in set (0.00 sec)
+
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31';
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Vishwa   | 2021-05-01 |
+| Udhaya   | 2021-05-09 |
+| Giri     | 2021-05-29 |
++----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31' limit 0;
+Empty set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31' limit 1;
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Vishwa   | 2021-05-01 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31';
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Vishwa   | 2021-05-01 |
+| Udhaya   | 2021-05-09 |
+| Giri     | 2021-05-29 |
++----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1011 | Rithikesh| 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+16 rows in set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-31' and '2021-05-01';
+Empty set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31';
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Vishwa   | 2021-05-01 |
+| Udhaya   | 2021-05-09 |
+| Giri     | 2021-05-29 |
++----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select Emp_Name,Hire_date from employee where Hire_date between '2021-05-01' and '2021-05-31' ORDER BY Hire_date desc;
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Giri     | 2021-05-29 |
+| Udhaya   | 2021-05-09 |
+| Vishwa   | 2021-05-01 |
++----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select hire_date where phone_num=9689904512;
+ERROR 1054 (42S22): Unknown column 'hire_date' in 'field list'
+mysql> select Hire_date where phone_num=9689904512;
+ERROR 1054 (42S22): Unknown column 'Hire_date' in 'field list'
+mysql> select Emp_Name,Hire_date where phone_num=9689904512;
+ERROR 1054 (42S22): Unknown column 'Emp_Name' in 'field list'
+mysql> select Emp_Name,Hire_date from employee where phone_num=9689904512;
++----------+------------+
+| Emp_Name | Hire_date  |
++----------+------------+
+| Giri     | 2021-05-29 |
++----------+------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from employee;
++-------------+
+| avg(salary) |
++-------------+
+| 7313.275000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from employee where dept='clerk';
++-------------+
+| max(salary) |
++-------------+
+|     8500.90 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) from employee where dept='no.20';
++-------------+
+| max(salary) |
++-------------+
+|     7500.90 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employee( Emp_id, Emp_Name, Phone_num, Hire_date, Dept, Salary, commission)values(1017,'deepak',6356789087,'2021-05-03','Salesman',5600.50,150),(1018,'Subash',6334567124,'2021-05-16','Salesman',5600.50,150),(1019,'Rajesh',7879765432,'2021-05-17','Salesman',5600.50,150);
+Query OK, 3 rows affected (0.09 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1011 | Rithikesh| 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
+|   1017 | deepak   | 6356789087 | 2021-05-03 | Salesman            | 5600.50 |     150.00 |
+|   1018 | Subash   | 6334567124 | 2021-05-16 | Salesman            | 5600.50 |     150.00 |
+|   1019 | Rajesh   | 7879765432 | 2021-05-17 | Salesman            | 5600.50 |     150.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+19 rows in set (0.00 sec)
+
+mysql> select min(salary),Emp_name from employee;
++-------------+----------+
+| min(salary) | Emp_name |
++-------------+----------+
+|     5600.50 | Vishnu     |
++-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select min(salary),Emp_name from employee where Dept='Salesman';
++-------------+----------+
+| min(salary) | Emp_name |
++-------------+----------+
+|     5600.50 | deepak   |
++-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from employee where dept='manager';
++-------------+
+| avg(salary) |
++-------------+
+| 9000.900000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from employee where dept='%analyst%';
++-------------+
+| sum(salary) |
++-------------+
+|        NULL |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from employee where dept like '%analyst%';
++-------------+
+| sum(salary) |
++-------------+
+|    14001.80 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='Employee','';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',''' at line 1
+mysql> select count(dept),dept from employee where dept='Employee';
++-------------+----------+
+| count(dept) | dept     |
++-------------+----------+
+|           3 | Employee |
++-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='manager';
++-------------+---------+
+| count(dept) | dept    |
++-------------+---------+
+|           1 | Manager |
++-------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='clerk';
++-------------+-------+
+| count(dept) | dept  |
++-------------+-------+
+|           3 | Clerk |
++-------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='no.20';
++-------------+-------+
+| count(dept) | dept  |
++-------------+-------+
+|           3 | No.20 |
++-------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='no.20(Data_analyst)';
++-------------+---------------------+
+| count(dept) | dept                |
++-------------+---------------------+
+|           2 | No.20(Data_analyst) |
++-------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='salesman';
++-------------+----------+
+| count(dept) | dept     |
++-------------+----------+
+|           3 | Salesman |
++-------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept),dept from employee where dept='Accountant';
++-------------+------------+
+| count(dept) | dept       |
++-------------+------------+
+|           2 | Accountant |
++-------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employee;
++--------+----------+------------+------------+---------------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept                | Salary  | commission |
++--------+----------+------------+------------+---------------------+---------+------------+
+|   1001 | Vishnu   | 8012657624 | 2020-06-06 | Manager             | 9000.90 |     500.00 |
+|   1002 | Madhu    | 8034567624 | 2020-09-26 | Clerk               | 8500.90 |     400.00 |
+|   1003 | Prathap  | 7502757576 | 2020-10-19 | Clerk               | 8500.90 |     400.00 |
+|   1004 | Naveen   | 9012652476 | 2020-11-16 | Clerk               | 8500.90 |     400.00 |
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant          | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant          | 8000.90 |     300.00 |
+|   1007 | Ram      | 7845743805 | 2020-01-31 | No.20               | 7500.90 |     300.00 |
+|   1008 | Karthik  | 7904968827 | 2020-12-11 | No.20               | 7500.90 |     300.00 |
+|   1009 | Prabha   | 7804778799 | 2020-12-16 | No.20               | 7500.90 |     300.00 |
+|   1010 | Mahe     | 6384808998 | 2021-01-09 | Employee            | 6000.90 |     200.00 |
+|   1011 | Rithikesh| 6368403839 | 2021-03-06 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1012 | Somesh   | 6367686124 | 2021-04-16 | No.20(Data_analyst) | 7000.90 |     250.00 |
+|   1013 | Harrish  | 7213654789 | 2021-04-29 | Employee            | 6000.40 |     200.00 |
+|   1014 | Vishwa   | 9629287365 | 2021-05-01 | Employee            | 6000.40 |     200.00 |
+|   1015 | Udhaya   | 9672414123 | 2021-05-09 | Emplyoee            | 6000.40 |     200.00 |
+|   1016 | Giri     | 9689904512 | 2021-05-29 | Emplyoee            | 6000.40 |     200.00 |
+|   1017 | deepak   | 6356789087 | 2021-05-03 | Salesman            | 5600.50 |     150.00 |
+|   1018 | Subash   | 6334567124 | 2021-05-16 | Salesman            | 5600.50 |     150.00 |
+|   1019 | Rajesh   | 7879765432 | 2021-05-17 | Salesman            | 5600.50 |     150.00 |
++--------+----------+------------+------------+---------------------+---------+------------+
+19 rows in set (0.00 sec)
+
+mysql> select distinct count(Dept) from employee;
++-------------+
+| count(Dept) |
++-------------+
+|          19 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(dept) union dept from employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dept from employee' at line 1
+mysql> select count(dept) union from employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from employee' at line 1
+mysql> select distinct dept from employee;
++---------------------+
+| dept                |
++---------------------+
+| Manager             |
+| Clerk               |
+| Accountant          |
+| No.20               |
+| Employee            |
+| No.20(Data_analyst) |
+| Emplyoee            |
+| Salesman            |
++---------------------+
+8 rows in set (0.00 sec)
+
+mysql> select distinct count(dept) from employee;
++-------------+
+| count(dept) |
++-------------+
+|          19 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select distinct count(emp_name),dept from employee;
++-----------------+---------+
+| count(emp_name) | dept    |
++-----------------+---------+
+|              19 | Manager |
++-----------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select distinct count(dept) from employee;
++-------------+
+| count(dept) |
++-------------+
+|          19 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select distinct dept,emp_name from employee;
++---------------------+----------+
+| dept                | emp_name |
++---------------------+----------+
+| Manager             | Vishnu   |
+| Clerk               | Madhu    |
+| Clerk               | Prathap  |
+| Clerk               | Naveen   |
+| Accountant          | Hari     |
+| Accountant          | Saravana |
+| No.20               | Ram      |
+| No.20               | Karthik  |
+| No.20               | Prabha   |
+| Employee            | Mahe     |
+| No.20(Data_analyst) | Rithikesh|
+| No.20(Data_analyst) | Somesh   |
+| Employee            | Harrish  |
+| Employee            | Vishwa   |
+| Emplyoee            | Udhaya   |
+| Emplyoee            | Giri     |
+| Salesman            | deepak   |
+| Salesman            | Subash   |
+| Salesman            | Rajesh   |
++---------------------+----------+
+19 rows in set (0.00 sec)
+
+mysql> SELECT emp_dept, COUNT(*)
+    ->   FROM emp_details
+    ->   GROUP BY emp_dept;
+ERROR 1146 (42S02): Table 'assignment.emp_details' doesn't exist
+mysql> select dept,count(*) from employee group by dept;
++---------------------+----------+
+| dept                | count(*) |
++---------------------+----------+
+| Manager             |        1 |
+| Clerk               |        3 |
+| Accountant          |        2 |
+| No.20               |        3 |
+| Employee            |        3 |
+| No.20(Data_analyst) |        2 |
+| Emplyoee            |        2 |
+| Salesman            |        3 |
++---------------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> select dept,count(*),avg(*) from employee group by dept,salary;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from employee group by dept,salary' at line 1
+mysql> select dept,sum(salary) from employee group by dept;
++---------------------+-------------+
+| dept                | sum(salary) |
++---------------------+-------------+
+| Manager             |     9000.90 |
+| Clerk               |    25502.70 |
+| Accountant          |    16001.80 |
+| No.20               |    22502.70 |
+| Employee            |    18001.70 |
+| No.20(Data_analyst) |    14001.80 |
+| Emplyoee            |    12000.80 |
+| Salesman            |    16801.50 |
++---------------------+-------------+
+8 rows in set (0.01 sec)
+
+mysql> select dept,max(salary) from employee group by dept;
++---------------------+-------------+
+| dept                | max(salary) |
++---------------------+-------------+
+| Manager             |     9000.90 |
+| Clerk               |     8500.90 |
+| Accountant          |     8000.90 |
+| No.20               |     7500.90 |
+| Employee            |     6000.90 |
+| No.20(Data_analyst) |     7000.90 |
+| Emplyoee            |     6000.40 |
+| Salesman            |     5600.50 |
++---------------------+-------------+
+8 rows in set (0.06 sec)
+
+mysql> select dept,min(salary) from employee group by dept;
++---------------------+-------------+
+| dept                | min(salary) |
++---------------------+-------------+
+| Manager             |     9000.90 |
+| Clerk               |     8500.90 |
+| Accountant          |     8000.90 |
+| No.20               |     7500.90 |
+| Employee            |     6000.40 |
+| No.20(Data_analyst) |     7000.90 |
+| Emplyoee            |     6000.40 |
+| Salesman            |     5600.50 |
++---------------------+-------------+
+8 rows in set (0.00 sec)
+
+mysql> select dept,count(salary) from employee group by dept>3;
++---------+---------------+
+| dept    | count(salary) |
++---------+---------------+
+| Manager |            19 |
++---------+---------------+
+1 row in set, 20 warnings (0.06 sec)
+
+mysql> select dept,count(*) from employee group by dept>3;
++---------+----------+
+| dept    | count(*) |
++---------+----------+
+| Manager |       19 |
++---------+----------+
+1 row in set, 20 warnings (0.00 sec)
+
+mysql> select dept,count(*) from employee group by dept;
++---------------------+----------+
+| dept                | count(*) |
++---------------------+----------+
+| Manager             |        1 |
+| Clerk               |        3 |
+| Accountant          |        2 |
+| No.20               |        3 |
+| Employee            |        3 |
+| No.20(Data_analyst) |        2 |
+| Emplyoee            |        2 |
+| Salesman            |        3 |
++---------------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> select dept,count(*) from employee group by dept where count>2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where count>2' at line 1
+mysql> select dept,count(*) from employee group by dept>2;
++---------+----------+
+| dept    | count(*) |
++---------+----------+
+| Manager |       19 |
++---------+----------+
+1 row in set, 20 warnings (0.00 sec)
+
+mysql> select dept,count(3) from employee group by dept;
++---------------------+----------+
+| dept                | count(3) |
++---------------------+----------+
+| Manager             |        1 |
+| Clerk               |        3 |
+| Accountant          |        2 |
+| No.20               |        3 |
+| Employee            |        3 |
+| No.20(Data_analyst) |        2 |
+| Emplyoee            |        2 |
+| Salesman            |        3 |
++---------------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> select dept,count(2) from employee group by dept;
++---------------------+----------+
+| dept                | count(2) |
++---------------------+----------+
+| Manager             |        1 |
+| Clerk               |        3 |
+| Accountant          |        2 |
+| No.20               |        3 |
+| Employee            |        3 |
+| No.20(Data_analyst) |        2 |
+| Emplyoee            |        2 |
+| Salesman            |        3 |
++---------------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> select dept from employee where count(dept)>2;
+ERROR 1111 (HY000): Invalid use of group function
+mysql> select dept from employee where group by count(dept)>2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group by count(dept)>2' at line 1
+mysql> select dept union all dept(count) from employee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dept(count) from employee' at line 1
+mysql> SELECT dep_id,
+    ->        count(*)
+    -> FROM employees
+    -> GROUP BY dep_id
+    -> HAVING count(*)<4;
+ERROR 1146 (42S02): Table 'assignment.employees' doesn't exist
+mysql> select dept count(*) from employee group by dept having count(*)>2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'count(*) from employee group by dept having count(*)>2' at line 1
+mysql> select dept,count(*) from employee group by dept having count(*)>2;
++----------+----------+
+| dept     | count(*) |
++----------+----------+
+| Clerk    |        3 |
+| No.20    |        3 |
+| Employee |        3 |
+| Salesman |        3 |
++----------+----------+
+4 rows in set (0.02 sec)
+
+mysql> select dept,sum(salary) from employee group by dept having sum(salary)>7000;
++---------------------+-------------+
+| dept                | sum(salary) |
++---------------------+-------------+
+| Manager             |     9000.90 |
+| Clerk               |    25502.70 |
+| Accountant          |    16001.80 |
+| No.20               |    22502.70 |
+| Employee            |    18001.70 |
+| No.20(Data_analyst) |    14001.80 |
+| Emplyoee            |    12000.80 |
+| Salesman            |    16801.50 |
++---------------------+-------------+
+8 rows in set (0.00 sec)
+
+mysql> select dept,sum(salary) from employee group by dept having sum(salary)>15000;
++------------+-------------+
+| dept       | sum(salary) |
++------------+-------------+
+| Clerk      |    25502.70 |
+| Accountant |    16001.80 |
+| No.20      |    22502.70 |
+| Employee   |    18001.70 |
+| Salesman   |    16801.50 |
++------------+-------------+
+5 rows in set (0.00 sec)
+
+mysql> select dept,count(*) from employee group by dept having count(*)>2;
++----------+----------+
+| dept     | count(*) |
++----------+----------+
+| Clerk    |        3 |
+| No.20    |        3 |
+| Employee |        3 |
+| Salesman |        3 |
++----------+----------+
+4 rows in set (0.00 sec)
+
+mysql> select max(salary),emp_name from employee;
++-------------+----------+
+| max(salary) | emp_name |
++-------------+----------+
+|     9000.90 | Vishnu     |
++-------------+----------+
+1 row in set (0.00 sec)
+
+mysql>  select Emp_Name,dept,min(Hire_date) from employee GROUP BY Hire_date order by Hire_date;
++----------+---------------------+----------------+
+| Emp_Name | dept                | min(Hire_date) |
++----------+---------------------+----------------+
+| Ram      | No.20               | 2020-01-31     |
+| Vishnu     | Manager             | 2020-06-06     |
+| Madhu    | Clerk               | 2020-09-26     |
+| Prathap     | Clerk               | 2020-10-19     |
+| Hari     | Accountant          | 2020-11-09     |
+| Naveen     | Clerk               | 2020-11-16     |
+| Saravana | Accountant          | 2020-11-29     |
+| Karthik  | No.20               | 2020-12-11     |
+| Prabha   | No.20               | 2020-12-16     |
+| Mahe     | Employee            | 2021-01-09     |
+| Rithikesh   | No.20(Data_analyst) | 2021-03-06     |
+| Somesh   | No.20(Data_analyst) | 2021-04-16     |
+| Harrish  | Employee            | 2021-04-29     |
+| Vishwa   | Employee            | 2021-05-01     |
+| deepak   | Salesman            | 2021-05-03     |
+| Udhaya   | Emplyoee            | 2021-05-09     |
+| Subash   | Salesman            | 2021-05-16     |
+| Rajesh   | Salesman            | 2021-05-17     |
+| Giri     | Emplyoee            | 2021-05-29     |
++----------+---------------------+----------------+
+19 rows in set (0.00 sec)
+
+mysql>  select Emp_Name,dept,min(Hire_date) from employee GROUP BY Hire_date order by Hire_date limit 1;
++----------+-------+----------------+
+| Emp_Name | dept  | min(Hire_date) |
++----------+-------+----------------+
+| Ram      | No.20 | 2020-01-31     |
++----------+-------+----------------+
+1 row in set (0.00 sec)
+
+mysql>  select Emp_Name,dept,min(Hire_date) from employee GROUP BY Hire_date order by Hire_date limit 3;
++----------+---------+----------------+
+| Emp_Name | dept    | min(Hire_date) |
++----------+---------+----------------+
+| Ram      | No.20   | 2020-01-31     |
+| Vishnu     | Manager | 2020-06-06     |
+| Madhu    | Clerk   | 2020-09-26     |
++----------+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> select dept,max(salary) from employee group by dept having max(salary)='clerk';
+Empty set, 1 warning (0.01 sec)
+
+mysql> select dept,max(salary) from employee group by dept having max(salary) like 'clerk';
+Empty set (0.00 sec)
+
+mysql> select dept,max(salary) from employee group by dept having max(salary) where dept='clerk';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where dept='clerk'' at line 1
+mysql> select emp_id,emp_name from employee where dept='clerk'and salary(select max(salary) from employee where dept='clerk');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'select max(salary) from employee where dept='clerk')' at line 1
+mysql> select emp_id,emp_name from employee where dept='clerk'and salary=(select max(salary) from employee where dept='clerk');
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|   1002 | Madhu    |
+|   1003 | Prathap     |
+|   1004 | Naveen     |
++--------+----------+
+3 rows in set (0.03 sec)
+
+mysql> select emp_id,emp_name,dept from employee where dept='clerk'and salary=(select max(salary) from employee where dept='clerk');
++--------+----------+-------+
+| emp_id | emp_name | dept  |
++--------+----------+-------+
+|   1002 | Madhu    | Clerk |
+|   1003 | Prathap     | Clerk |
+|   1004 | Naveen     | Clerk |
++--------+----------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name,dept,salary from employee where dept='clerk'and salary=(select max(salary) from employee where dept='clerk');
++--------+----------+-------+---------+
+| emp_id | emp_name | dept  | salary  |
++--------+----------+-------+---------+
+|   1002 | Madhu    | Clerk | 8500.90 |
+|   1003 | Prathap     | Clerk | 8500.90 |
+|   1004 | Naveen     | Clerk | 8500.90 |
++--------+----------+-------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name,dept,salary from employee where dept='salesman'and salary=(select max(salary) from employee where dept='salesman');
++--------+----------+----------+---------+
+| emp_id | emp_name | dept     | salary  |
++--------+----------+----------+---------+
+|   1017 | deepak   | Salesman | 5600.50 |
+|   1018 | Subash   | Salesman | 5600.50 |
+|   1019 | Rajesh   | Salesman | 5600.50 |
++--------+----------+----------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select * from employee where dept='accountant';
++--------+----------+------------+------------+------------+---------+------------+
+| Emp_id | Emp_Name | Phone_num  | Hire_date  | Dept       | Salary  | commission |
++--------+----------+------------+------------+------------+---------+------------+
+|   1005 | Hari     | 7842667621 | 2020-11-09 | Accountant | 8000.90 |     300.00 |
+|   1006 | Saravana | 8112657123 | 2020-11-29 | Accountant | 8000.90 |     300.00 |
++--------+----------+------------+------------+------------+---------+------------+
+2 rows in set (0.00 sec)
+
+mysql>

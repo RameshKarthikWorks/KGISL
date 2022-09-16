@@ -1,0 +1,1079 @@
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh   |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh   |       10| analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh   |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani   |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark   |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh   |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter    |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan|      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh   |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into empp values(1010,'varatha',8,'qc','1980-09-20',10000,120000),(1011,'rossi',5,'manager','1890-01-04',10000,120000),(1012,'prabhu',1,'ceo','1980-01-01',10000,120000),(1013,'Taharkguru',2,'admin','1890-03-09',80000,96000);
+Query OK, 4 rows affected (0.11 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh   |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh   |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh   |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani   |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark   |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh   |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter    |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan|      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh   |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Taharkguru|       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select*from empp emp_name,dept_name;
+ERROR 1146 (42S02): Table 'prim.dept_name' doesn't exist
+mysql> select*from empp where emp_name,dept_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',dept_name' at line 1
+mysql> select*from empp where emp_name and dept_name;
+Empty set, 12 warnings (0.00 sec)
+
+mysql> select*from empp where in(emp_name and dept_name);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in(emp_name and dept_name)' at line 1
+mysql> select emp_name,dept_name from empp;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Gajesh   | analyst   |
+| Somesh   | analyst   |
+| Dinesh   | analyst   |
+| Darani   | sales     |
+| Tahark   | sales     |
+| Mahesh   | sales     |
+| peter    | cleark    |
+| hariharan| cleark    |
+| Danesh   | cleark    |
+| varatha  | qc        |
+| rossi    | manager   |
+| prabhu   | ceo       |
+| Taharkguru| admin     |
++----------+-----------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,dept_name,salary from empp;
++----------+-----------+--------+
+| emp_name | dept_name | salary |
++----------+-----------+--------+
+| Gajesh   | analyst   |   7000 |
+| Somesh   | analyst   |   7000 |
+| Dinesh   | analyst   |   8000 |
+| Darani   | sales     |   7000 |
+| Tahark   | sales     |   6500 |
+| Mahesh   | sales     |   7000 |
+| peter    | cleark    |   5000 |
+| hariharan| cleark    |   5000 |
+| Danesh   | cleark    |   5000 |
+| varatha  | qc        |  10000 |
+| rossi    | manager   |  10000 |
+| prabhu   | ceo       |  10000 |
+| Taharkguru | admin     |  80000 |
++----------+-----------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,dept_no,salary from empp;
++----------+---------+--------+
+| emp_name | dept_no | salary |
++----------+---------+--------+
+| Gajesh   |      10 |   7000 |
+| Somesh   |      10 |   7000 |
+| Dinesh   |      10 |   8000 |
+| Darani   |      11 |   7000 |
+| Tahark   |      11 |   6500 |
+| Mahesh   |      11 |   7000 |
+| peter    |      12 |   5000 |
+| hariharan|      12 |   5000 |
+| Danesh   |      12 |   5000 |
+| varatha  |       8 |  10000 |
+| rossi    |       5 |  10000 |
+| prabhu   |       1 |  10000 |
+| Taharkguru|       2 |  80000 |
++----------+---------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,hire_date,dept_no from empp;
++--------+------------+---------+
+| emp_id | hire_date  | dept_no |
++--------+------------+---------+
+|   1001 | 1980-02-20 |      10 |
+|   1002 | 1980-03-11 |      10 |
+|   1003 | 1980-01-01 |      10 |
+|   1004 | 1980-03-04 |      11 |
+|   1005 | 1980-05-30 |      11 |
+|   1006 | 1980-05-18 |      11 |
+|   1007 | 1980-08-24 |      12 |
+|   1008 | 1980-08-21 |      12 |
+|   1009 | 1980-12-12 |      12 |
+|   1010 | 1980-09-20 |       8 |
+|   1011 | 1890-01-04 |       5 |
+|   1012 | 1980-01-01 |       1 |
+|   1013 | 1890-03-09 |       2 |
++--------+------------+---------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,annual_salary from empp;
++----------+---------------+
+| emp_name | annual_salary |
++----------+---------------+
+| Gajesh   |         84000 |
+| Somesh   |         84000 |
+| Dinesh   |        990000 |
+| Darani   |         84000 |
+| Tahark   |         78000 |
+| Mahesh   |         84000 |
+| peter    |         60000 |
+| hariharan|         60000 |
+| Danesh   |         60000 |
+| varatha  |        120000 |
+| rossi    |        120000 |
+| prabhu   |        120000 |
+| Taharkguru|         96000 |
++----------+---------------+
+13 rows in set (0.00 sec)
+
+
+mysql> select*from empp where between dept_no 10 and emp_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between dept_no 10 and emp_name' at line 1
+mysql> select*from empp where dept_no 10 and emp_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 and emp_name' at line 1
+mysql> select dept_no 10 and emp_name from empp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 and emp_name from empp' at line 1
+
+
+mysql> select dept_no and emp_name from empp where dept_no like dept_no=10;
+Empty set (0.00 sec)
+
+mysql> select dept_no and emp_name from empp where dept_no like dept_no 10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10' at line 1
+mysql> select * from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh   |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh   |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh   |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani   |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark   |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh   |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter    |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan|      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh   |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Taharkguru|       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name from empp where dept_no=10;
++----------+
+| emp_name |
++----------+
+| Gajesh   |
+| Somesh   |
+| Dinesh   |
++----------+
+3 rows in set (0.01 sec)
+
+mysql> select emp_name,dept_no from empp where dept_no=10;
++----------+---------+
+| emp_name | dept_no |
++----------+---------+
+| Gajesh   |      10 |
+| Somesh   |      10 |
+| Dinesh   |      10 |
++----------+---------+
+3 rows in set (0.01 sec)
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Taharkguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name from empp where salary<6000;
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|   1007 | peter       |
+|   1008 | hariharan     |
+|   1009 | Danesh     |
++--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where between hire_date '1980-05-30' and '1980-12-30';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between hire_date '1980-05-30' and '1980-12-30'' at line 1
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-05-30' and '1980-12-30';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1005 | Tahark     | 1980-05-30 |
+|   1007 | peter       | 1980-08-24 |
+|   1008 | hariharan     | 1980-08-21 |
+|   1009 | Danesh     | 1980-12-12 |
+|   1010 | varatha  | 1980-09-20 |
++--------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name=cleark and analyst and sales;
+ERROR 1054 (42S22): Unknown column 'cleark' in 'where clause'
+mysql> select emp_id,dept_no,dept_name from empp where dept_name cleark and analyst and sales;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cleark and analyst and sales' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name=cleark;
+ERROR 1054 (42S22): Unknown column 'cleark' in 'where clause'
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Taharkguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name 'cleark';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''cleark'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark';
++--------+---------+-----------+
+| emp_id | dept_no | dept_name |
++--------+---------+-----------+
+|   1007 |      12 | cleark    |
+|   1008 |      12 | cleark    |
+|   1009 |      12 | cleark    |
++--------+---------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark' and 'analyst' and 'sales';
+Empty set, 1 warning (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark','analyst', 'sales';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','analyst', 'sales'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark', dept_name='analyst', dept_name= 'sales';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', dept_name='analyst', dept_name= 'sales'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark'and dept_name='analyst' and dept_name= 'sales';
+Empty set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name in('cleark','analyst','sales');
++--------+---------+-----------+
+| emp_id | dept_no | dept_name |
++--------+---------+-----------+
+|   1001 |      10 | analyst   |
+|   1002 |      10 | analyst   |
+|   1003 |      10 | analyst   |
+|   1004 |      11 | sales     |
+|   1005 |      11 | sales     |
+|   1006 |      11 | sales     |
+|   1007 |      12 | cleark    |
+|   1008 |      12 | cleark    |
+|   1009 |      12 | cleark    |
++--------+---------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Gajesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | Somesh  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | Dinesh    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | Darani  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Tahark     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | Mahesh    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | peter       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hariharan     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | Danesh     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Taharkguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like 's%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Dinesh    | analyst   |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '%u';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Dinesh    | analyst   |
+| Darani  | sales     |
+| Danesh     | cleark    |
+| prabhu   | ceo       |
+| Taharkguru | admin     |
++----------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '_a%'; 
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Gajesh      | analyst   |
+| Somesh  | analyst   |
+| Tahark     | sales     |
+| Mahesh    | sales     |
+| hariharan     | cleark    |
+| Danesh     | cleark    |
+| varatha  | qc        |
+| Taharkguru | admin     |
++----------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> select emp_name from empp;
++----------+
+| emp_name |
++----------+
+| Gajesh      |
+| Somesh  |
+| Dinesh    |
+| Darani  |
+| Tahark     |
+| Mahesh    |
+| peter       |
+| hariharan     |
+| Danesh     |
+| varatha  |
+| rossi    |
+| prabhu   |
+| Taharkguru |
++----------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name from empp where dept_name not
+in('analyst','cleark','sales');
++----------+--------+-----------+
+| emp_name | emp_id | dept_name |
++----------+--------+-----------+
+| varatha  |   1010 | qc        |
+| rossi    |   1011 | manager   |
+| prabhu   |   1012 | ceo       |
+| Taharkguru |   1013 | admin     |
++----------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '%ee%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Dinesh    | analyst   |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '____a%';
+Empty set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '___a%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Tahark     | sales     |
+| Mahesh    | sales     |
+| varatha  | qc        |
+| Taharkguru | admin     |
++----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name from empp where salary>8000;
++----------+--------+-----------+
+| emp_name | emp_id | dept_name |
++----------+--------+-----------+
+| varatha  |   1010 | qc        |
+| rossi    |   1011 | manager   |
+| prabhu   |   1012 | ceo       |
+| Taharkguru |   1013 | admin     |
++----------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary from empp where salary>8000;
++----------+--------+-----------+--------+
+| emp_name | emp_id | dept_name | salary |
++----------+--------+-----------+--------+
+| varatha  |   1010 | qc        |  10000 |
+| rossi    |   1011 | manager   |  10000 |
+| prabhu   |   1012 | ceo       |  10000 |
+| Taharkguru |   1013 | admin     |  80000 |
++----------+--------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary from empp where dept_name not 'manager';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax mysql> select emp_name,emp_id,dept_name, salary from empp where dept_name not in('manager');
++----------+--------+-----------+--------+alary from empp where dept_name not 'manager';
+| emp_name | emp_id | dept_name | salary |
++----------+--------+-----------+--------+
+| Gajesh      |   1001 | analyst   |   7000 |
+| Somesh  |   1002 | analyst   |   7000 |
+| Dinesh    |   1003 | analyst   |   8000 |
+| Darani  |   1004 | sales     |   7000 |
+| Tahark     |   1005 | sales     |   6500 |
+| Mahesh    |   1006 | sales     |   7000 |
+| peter       |   1007 | cleark    |   5000 |
+| hariharan     |   1008 | cleark    |   5000 |
+| Danesh     |   1009 | cleark    |   5000 |
+| varatha  |   1010 | qc        |  10000 |
+| prabhu   |   1012 | ceo       |  10000 |
+| Taharkguru |   1013 | admin     |  80000 |
++----------+--------+-----------+--------+
+12 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary,hire_date,annual_salary from empp where dept_name not in('manager');
++----------+--------+-----------+--------+------------+---------------+
+| emp_name | emp_id | dept_name | salary | hire_date  | annual_salary |
++----------+--------+-----------+--------+------------+---------------+
+| Gajesh      |   1001 | analyst   |   7000 | 1980-02-20 |         84000 |
+| Somesh  |   1002 | analyst   |   7000 | 1980-03-11 |         84000 |
+| Dinesh    |   1003 | analyst   |   8000 | 1980-01-01 |        990000 |
+| Darani  |   1004 | sales     |   7000 | 1980-03-04 |         84000 |
+| Tahark     |   1005 | sales     |   6500 | 1980-05-30 |         78000 |
+| Mahesh    |   1006 | sales     |   7000 | 1980-05-18 |         84000 |
+| peter       |   1007 | cleark    |   5000 | 1980-08-24 |         60000 |
+| hariharan     |   1008 | cleark    |   5000 | 1980-08-21 |         60000 |
+| Danesh     |   1009 | cleark    |   5000 | 1980-12-12 |         60000 |
+| varatha  |   1010 | qc        |  10000 | 1980-09-20 |        120000 |
+| prabhu   |   1012 | ceo       |  10000 | 1980-01-01 |        120000 |
+| Taharkguru |   1013 | admin     |  80000 | 1890-03-09 |         96000 |
++----------+--------+-----------+--------+------------+---------------+
+12 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-01-01' and '1980-05-29';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1001 | Gajesh      | 1980-02-20 |
+|   1002 | Somesh  | 1980-03-11 |
+|   1003 | Dinesh    | 1980-01-01 |
+|   1004 | Darani  | 1980-03-04 |
+|   1006 | Mahesh    | 1980-05-18 |
+|   1012 | prabhu   | 1980-01-01 |
++--------+----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-05-01' and '1980-05-30';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1005 | Tahark     | 1980-05-30 |
+|   1006 | Mahesh    | 1980-05-18 |
++--------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> insert into empp values(1010,'varatha',8,'qc','1980-09-20',10000,120000),(1011,'rossi',5,'manager','1890-01-04',10000,120000),(1012,'prabhu',1,'ceo','1980-01-01',10000,120000),(1013,'Ganeshaguru',2,'admin','1890-03-09',80000,96000);
+Query OK, 4 rows affected (0.11 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Ganeshaguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select*from empp emp_name,dept_name;
+ERROR 1146 (42S02): Table 'prim.dept_name' doesn't exist
+mysql> select*from empp where emp_name,dept_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',dept_name' at line 1
+mysql> select*from empp where emp_name and dept_name;
+Empty set, 12 warnings (0.00 sec)
+
+mysql> select*from empp where in(emp_name and dept_name);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in(emp_name and dept_name)' at line 1
+mysql> select emp_name,dept_name from empp;
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Ganesh      | analyst   |
+| karthik  | analyst   |
+| seenu    | analyst   |
+| chandru  | sales     |
+| Ganesha     | sales     |
+| kalai    | sales     |
+| pk       | cleark    |
+| hari     | cleark    |
+| ragu     | cleark    |
+| varatha  | qc        |
+| rossi    | manager   |
+| prabhu   | ceo       |
+| Ganeshaguru | admin     |
++----------+-----------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,dept_name,salary from empp;
++----------+-----------+--------+
+| emp_name | dept_name | salary |
++----------+-----------+--------+
+| Ganesh      | analyst   |   7000 |
+| karthik  | analyst   |   7000 |
+| seenu    | analyst   |   8000 |
+| chandru  | sales     |   7000 |
+| Ganesha     | sales     |   6500 |
+| kalai    | sales     |   7000 |
+| pk       | cleark    |   5000 |
+| hari     | cleark    |   5000 |
+| ragu     | cleark    |   5000 |
+| varatha  | qc        |  10000 |
+| rossi    | manager   |  10000 |
+| prabhu   | ceo       |  10000 |
+| Ganeshaguru | admin     |  80000 |
++----------+-----------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,dept_no,salary from empp;
++----------+---------+--------+
+| emp_name | dept_no | salary |
++----------+---------+--------+
+| Ganesh      |      10 |   7000 |
+| karthik  |      10 |   7000 |
+| seenu    |      10 |   8000 |
+| chandru  |      11 |   7000 |
+| Ganesha     |      11 |   6500 |
+| kalai    |      11 |   7000 |
+| pk       |      12 |   5000 |
+| hari     |      12 |   5000 |
+| ragu     |      12 |   5000 |
+| varatha  |       8 |  10000 |
+| rossi    |       5 |  10000 |
+| prabhu   |       1 |  10000 |
+| Ganeshaguru |       2 |  80000 |
++----------+---------+--------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,hire_date,dept_no from empp;
++--------+------------+---------+
+| emp_id | hire_date  | dept_no |
++--------+------------+---------+
+|   1001 | 1980-02-20 |      10 |
+|   1002 | 1980-03-11 |      10 |
+|   1003 | 1980-01-01 |      10 |
+|   1004 | 1980-03-04 |      11 |
+|   1005 | 1980-05-30 |      11 |
+|   1006 | 1980-05-18 |      11 |
+|   1007 | 1980-08-24 |      12 |
+|   1008 | 1980-08-21 |      12 |
+|   1009 | 1980-12-12 |      12 |
+|   1010 | 1980-09-20 |       8 |
+|   1011 | 1890-01-04 |       5 |
+|   1012 | 1980-01-01 |       1 |
+|   1013 | 1890-03-09 |       2 |
++--------+------------+---------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,annual_salary from empp;
++----------+---------------+
+| emp_name | annual_salary |
++----------+---------------+
+| Ganesh      |         84000 |
+| karthik  |         84000 |
+| seenu    |        990000 |
+| chandru  |         84000 |
+| Ganesha     |         78000 |
+| kalai    |         84000 |
+| pk       |         60000 |
+| hari     |         60000 |
+| ragu     |         60000 |
+| varatha  |        120000 |
+| rossi    |        120000 |
+| prabhu   |        120000 |
+| Ganeshaguru |         96000 |
++----------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select dept_no=10 from empp;
++------------+
+| dept_no=10 |
++------------+
+|          1 |
+|          1 |
+|          1 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
+|          0 |
++------------+
+13 rows in set (0.00 sec)
+
+mysql> select dept_no=10 and emp_name from empp;
++-------------------------+
+| dept_no=10 and emp_name |
++-------------------------+
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
++-------------------------+
+13 rows in set, 3 warnings (0.00 sec)
+
+mysql> select*from empp where between dept_no 10 and emp_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between dept_no 10 and emp_name' at line 1
+mysql> select*from empp where dept_no 10 and emp_name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 and emp_name' at line 1
+mysql> select dept_no 10 and emp_name from empp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 and emp_name from empp' at line 1
+mysql> select dept_no=10 and emp_name from empp;
++-------------------------+
+| dept_no=10 and emp_name |
++-------------------------+
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
+|                       0 |
++-------------------------+
+13 rows in set, 3 warnings (0.00 sec)
+
+mysql> select dept_no and emp_name from empp where dept_no=10;
++----------------------+
+| dept_no and emp_name |
++----------------------+
+|                    0 |
+|                    0 |
+|                    0 |
++----------------------+
+3 rows in set, 3 warnings (0.00 sec)
+
+mysql> select dept_no and emp_name from empp where dept_no like dept_no=10;
+Empty set (0.00 sec)
+
+mysql> select dept_no and emp_name from empp where dept_no like dept_no 10;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10' at line 1
+mysql> select * from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Ganeshaguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name from empp where dept_no=10;
++----------+
+| emp_name |
++----------+
+| Ganesh      |
+| karthik  |
+| seenu    |
++----------+
+3 rows in set (0.01 sec)
+
+mysql> select emp_name,dept_no from empp where dept_no=10;
++----------+---------+
+| emp_name | dept_no |
++----------+---------+
+| Ganesh      |      10 |
+| karthik  |      10 |
+| seenu    |      10 |
++----------+---------+
+3 rows in set (0.01 sec)
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Ganeshaguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name from empp where salary<6000;
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|   1007 | pk       |
+|   1008 | hari     |
+|   1009 | ragu     |
++--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where between hire_date '1980-05-30' and '1980-12-30';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between hire_date '1980-05-30' and '1980-12-30'' at line 1
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-05-30' and '1980-12-30';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1005 | Ganesha     | 1980-05-30 |
+|   1007 | pk       | 1980-08-24 |
+|   1008 | hari     | 1980-08-21 |
+|   1009 | ragu     | 1980-12-12 |
+|   1010 | varatha  | 1980-09-20 |
++--------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name=cleark and analyst and sales;
+ERROR 1054 (42S22): Unknown column 'cleark' in 'where clause'
+mysql> select emp_id,dept_no,dept_name from empp where dept_name cleark and analyst and sales;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cleark and analyst and sales' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name=cleark;
+ERROR 1054 (42S22): Unknown column 'cleark' in 'where clause'
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Ganeshaguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name 'cleark';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''cleark'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark';
++--------+---------+-----------+
+| emp_id | dept_no | dept_name |
++--------+---------+-----------+
+|   1007 |      12 | cleark    |
+|   1008 |      12 | cleark    |
+|   1009 |      12 | cleark    |
++--------+---------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark' and 'analyst' and 'sales';
+Empty set, 1 warning (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark','analyst', 'sales';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','analyst', 'sales'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark', dept_name='analyst', dept_name= 'sales';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', dept_name='analyst', dept_name= 'sales'' at line 1
+mysql> select emp_id,dept_no,dept_name from empp where dept_name='cleark'and dept_name='analyst' and dept_name= 'sales';
+Empty set (0.00 sec)
+
+mysql> select emp_id,dept_no,dept_name from empp where dept_name in('cleark','analyst','sales');
++--------+---------+-----------+
+| emp_id | dept_no | dept_name |
++--------+---------+-----------+
+|   1001 |      10 | analyst   |
+|   1002 |      10 | analyst   |
+|   1003 |      10 | analyst   |
+|   1004 |      11 | sales     |
+|   1005 |      11 | sales     |
+|   1006 |      11 | sales     |
+|   1007 |      12 | cleark    |
+|   1008 |      12 | cleark    |
+|   1009 |      12 | cleark    |
++--------+---------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> select*from empp;
++--------+----------+---------+-----------+------------+--------+---------------+
+| emp_id | emp_name | dept_no | dept_name | hire_date  | salary | annual_salary |
++--------+----------+---------+-----------+------------+--------+---------------+
+|   1001 | Ganesh      |      10 | analyst   | 1980-02-20 |   7000 |         84000 |
+|   1002 | karthik  |      10 | analyst   | 1980-03-11 |   7000 |         84000 |
+|   1003 | seenu    |      10 | analyst   | 1980-01-01 |   8000 |        990000 |
+|   1004 | chandru  |      11 | sales     | 1980-03-04 |   7000 |         84000 |
+|   1005 | Ganesha     |      11 | sales     | 1980-05-30 |   6500 |         78000 |
+|   1006 | kalai    |      11 | sales     | 1980-05-18 |   7000 |         84000 |
+|   1007 | pk       |      12 | cleark    | 1980-08-24 |   5000 |         60000 |
+|   1008 | hari     |      12 | cleark    | 1980-08-21 |   5000 |         60000 |
+|   1009 | ragu     |      12 | cleark    | 1980-12-12 |   5000 |         60000 |
+|   1010 | varatha  |       8 | qc        | 1980-09-20 |  10000 |        120000 |
+|   1011 | rossi    |       5 | manager   | 1890-01-04 |  10000 |        120000 |
+|   1012 | prabhu   |       1 | ceo       | 1980-01-01 |  10000 |        120000 |
+|   1013 | Ganeshaguru |       2 | admin     | 1890-03-09 |  80000 |         96000 |
++--------+----------+---------+-----------+------------+--------+---------------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like 's%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| seenu    | analyst   |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '%u';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| seenu    | analyst   |
+| chandru  | sales     |
+| ragu     | cleark    |
+| prabhu   | ceo       |
+| Ganeshaguru | admin     |
++----------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '_a%'; 
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Ganesh      | analyst   |
+| karthik  | analyst   |
+| Ganesha     | sales     |
+| kalai    | sales     |
+| hari     | cleark    |
+| ragu     | cleark    |
+| varatha  | qc        |
+| Ganeshaguru | admin     |
++----------+-----------+
+8 rows in set (0.00 sec)
+
+mysql> select emp_name from empp;
++----------+
+| emp_name |
++----------+
+| Ganesh      |
+| karthik  |
+| seenu    |
+| chandru  |
+| Ganesha     |
+| kalai    |
+| pk       |
+| hari     |
+| ragu     |
+| varatha  |
+| rossi    |
+| prabhu   |
+| Ganeshaguru |
++----------+
+13 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name from empp where dept_name not
+in('analyst','cleark','sales');
++----------+--------+-----------+
+| emp_name | emp_id | dept_name |
++----------+--------+-----------+
+| varatha  |   1010 | qc        |
+| rossi    |   1011 | manager   |
+| prabhu   |   1012 | ceo       |
+| Ganeshaguru |   1013 | admin     |
++----------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '%ee%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| seenu    | analyst   |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '____a%';
+Empty set (0.00 sec)
+
+mysql> select emp_name, dept_name from empp where emp_name like '___a%';
++----------+-----------+
+| emp_name | dept_name |
++----------+-----------+
+| Ganesha     | sales     |
+| kalai    | sales     |
+| varatha  | qc        |
+| Ganeshaguru | admin     |
++----------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name from empp where salary>8000;
++----------+--------+-----------+
+| emp_name | emp_id | dept_name |
++----------+--------+-----------+
+| varatha  |   1010 | qc        |
+| rossi    |   1011 | manager   |
+| prabhu   |   1012 | ceo       |
+| Ganeshaguru |   1013 | admin     |
++----------+--------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary from empp where salary>8000;
++----------+--------+-----------+--------+
+| emp_name | emp_id | dept_name | salary |
++----------+--------+-----------+--------+
+| varatha  |   1010 | qc        |  10000 |
+| rossi    |   1011 | manager   |  10000 |
+| prabhu   |   1012 | ceo       |  10000 |
+| Ganeshaguru |   1013 | admin     |  80000 |
++----------+--------+-----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary from empp where dept_name not 'manager';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax mysql> select emp_name,emp_id,dept_name, salary from empp where dept_name not in('manager');
++----------+--------+-----------+--------+alary from empp where dept_name not 'manager';
+| emp_name | emp_id | dept_name | salary |
++----------+--------+-----------+--------+
+| Ganesh      |   1001 | analyst   |   7000 |
+| karthik  |   1002 | analyst   |   7000 |
+| seenu    |   1003 | analyst   |   8000 |
+| chandru  |   1004 | sales     |   7000 |
+| Ganesha     |   1005 | sales     |   6500 |
+| kalai    |   1006 | sales     |   7000 |
+| pk       |   1007 | cleark    |   5000 |
+| hari     |   1008 | cleark    |   5000 |
+| ragu     |   1009 | cleark    |   5000 |
+| varatha  |   1010 | qc        |  10000 |
+| prabhu   |   1012 | ceo       |  10000 |
+| Ganeshaguru |   1013 | admin     |  80000 |
++----------+--------+-----------+--------+
+12 rows in set (0.00 sec)
+
+mysql> select emp_name,emp_id,dept_name, salary,hire_date,annual_salary from empp where dept_name not in('manager');
++----------+--------+-----------+--------+------------+---------------+
+| emp_name | emp_id | dept_name | salary | hire_date  | annual_salary |
++----------+--------+-----------+--------+------------+---------------+
+| Ganesh      |   1001 | analyst   |   7000 | 1980-02-20 |         84000 |
+| karthik  |   1002 | analyst   |   7000 | 1980-03-11 |         84000 |
+| seenu    |   1003 | analyst   |   8000 | 1980-01-01 |        990000 |
+| chandru  |   1004 | sales     |   7000 | 1980-03-04 |         84000 |
+| Ganesha     |   1005 | sales     |   6500 | 1980-05-30 |         78000 |
+| kalai    |   1006 | sales     |   7000 | 1980-05-18 |         84000 |
+| pk       |   1007 | cleark    |   5000 | 1980-08-24 |         60000 |
+| hari     |   1008 | cleark    |   5000 | 1980-08-21 |         60000 |
+| ragu     |   1009 | cleark    |   5000 | 1980-12-12 |         60000 |
+| varatha  |   1010 | qc        |  10000 | 1980-09-20 |        120000 |
+| prabhu   |   1012 | ceo       |  10000 | 1980-01-01 |        120000 |
+| Ganeshaguru |   1013 | admin     |  80000 | 1890-03-09 |         96000 |
++----------+--------+-----------+--------+------------+---------------+
+12 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-01-01' and '1980-05-29';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1001 | Ganesh      | 1980-02-20 |
+|   1002 | karthik  | 1980-03-11 |
+|   1003 | seenu    | 1980-01-01 |
+|   1004 | chandru  | 1980-03-04 |
+|   1006 | kalai    | 1980-05-18 |
+|   1012 | prabhu   | 1980-01-01 |
++--------+----------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select emp_id,emp_name, hire_date from empp where hire_date between '1980-05-01' and '1980-05-30';
++--------+----------+------------+
+| emp_id | emp_name | hire_date  |
++--------+----------+------------+
+|   1005 | Ganesha     | 1980-05-30 |
+|   1006 | kalai    | 1980-05-18 |
++--------+----------+------------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+

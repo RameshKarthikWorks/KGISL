@@ -1,0 +1,66 @@
+mysql> select * from employees;
++-------+-------------+---------------------+----------------+----------+------------+
+| empid | empname     | position            | department     | salary   | Hiredate   |
++-------+-------------+---------------------+----------------+----------+------------+
+|   101 | VarathRajan | Clerk               | Administration | 12500.56 | 2010-01-25 |
+|   102 | Rajaguru    | Accountant          | Finance        |  8000.75 | 2010-02-15 |
+|   103 | Hariharan   | Software Engineer   | IT             | 15000.25 | 2012-05-07 |
+|   104 | Karthi      | Manager             | Management     | 18000.55 | 2014-08-18 |
+|   105 | Ram Sundhar | Editor              | Multimedia     | 14000.35 | 2015-09-21 |
+|   106 | Saravana    | Marketing Executive | Marketing      | 20000.25 | 2018-06-22 |
+|   107 | Yosuf       | Clerk               | Administration | 16500.56 | 2017-05-24 |
+|   107 | Manoj       | Sales person        | Marketing      | 12000.75 | 2016-05-22 |
+|   108 | Freoz       | IT Admin            | IT             | 18000.24 | 2018-11-22 |
++-------+-------------+---------------------+----------------+----------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select empname,position,department,max(salary) from employees group by empname order by empname limit 1 offset 7;
++----------+---------------------+------------+-------------+
+| empname  | position            | department | max(salary) |
++----------+---------------------+------------+-------------+
+| Saravana | Marketing Executive | Marketing  |    20000.25 |
++----------+---------------------+------------+-------------+
+
+
+mysql> select empname,position,department,min(hiredate) from employees group by hiredate order by hiredate limit 1 offset 0;
++-------------+----------+----------------+---------------+
+| empname     | position | department     | min(hiredate) |
++-------------+----------+----------------+---------------+
+| VarathRajan | Clerk    | Administration | 2010-01-25    |
++-------------+----------+----------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employees where department='Accounting';
++-------+----------+------------+------------+---------+------------+
+| empid | empname  | position   | department | salary  | Hiredate   |
++-------+----------+------------+------------+---------+------------+
+|   102 | Rajaguru | Accountant | Accounting | 8000.75 | 2010-02-15 |
++-------+----------+------------+------------+---------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> select empname,position,department,max(salary) from employees group by empname order by salary;
++-------------+---------------------+----------------+-------------+
+| empname     | position            | department     | max(salary) |
++-------------+---------------------+----------------+-------------+
+| Rajaguru    | Accountant          | Accounting     |     8000.75 |
+| Manoj       | Sales person        | Marketing      |    12000.75 |
+| VarathRajan | Clerk               | Administration |    12500.56 |
+| Ram Sundhar | Editor              | Multimedia     |    14000.35 |
+| Hariharan   | Software Engineer   | IT             |    15000.25 |
+| Yosuf       | Clerk               | Administration |    16500.56 |
+| Mohan       | Clerk               | Administration |    17500.56 |
+| Freoz       | IT Admin            | IT             |    18000.24 |
+| Karthi      | Manager             | Management     |    18000.55 |
+| Saravana    | Marketing Executive | Marketing      |    20000.25 |
++-------------+---------------------+----------------+-------------+
+
+
+
+mysql> select * from employees where position='accountant';
++-------+----------+------------+------------+---------+------------+
+| empid | empname  | position   | department | salary  | Hiredate   |
++-------+----------+------------+------------+---------+------------+
+|   102 | Rajaguru | Accountant | Accounting | 8000.75 | 2010-02-15 |
++-------+----------+------------+------------+---------+------------+
+1 row in set (0.00 sec)
