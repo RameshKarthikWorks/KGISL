@@ -1,0 +1,51 @@
+body
+{
+    background-color: black;
+}
+
+#bulb
+
+{
+
+    height: 200px;
+    width: 200px;
+    margin-left: 550px;
+}
+
+#cat
+{
+    height: 200px;
+    width: 200px;
+    margin-left: 550px;
+}
+
+.switchcontainer
+
+{
+
+    margin-left: 550px;
+    margin-top: 50px;
+    background-color: rgb(223, 203, 203);
+    height: 100px;
+    width: 200px;
+}
+
+.buttons
+
+{
+
+    margin-left: 60px;
+}
+
+
+#on
+{
+    background-color: red;
+    color: white;
+}
+
+#off
+{
+    background-color: grey;
+    color: black;
+}

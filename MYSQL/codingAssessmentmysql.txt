@@ -1,0 +1,134 @@
+mysql> desc collegedet;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| No            | int          | NO   |     | NULL    |       |
+| Name          | varchar(200) | YES  |     | NULL    |       |
+| Department    | varchar(200) | YES  |     | NULL    |       |
+| Dateofjoining | date         | YES  |     | NULL    |       |
+| salary        | int          | YES  |     | NULL    |       |
+| Sex           | varchar(10)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> alter table collegedet modify dateofjoining varchar(200);
+Query OK, 0 rows affected (0.26 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc collegedet;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| No            | int          | NO   |     | NULL    |       |
+| Name          | varchar(200) | YES  |     | NULL    |       |
+| Department    | varchar(200) | YES  |     | NULL    |       |
+| dateofjoining | varchar(200) | YES  |     | NULL    |       |
+| salary        | int          | YES  |     | NULL    |       |
+| Sex           | varchar(10)  | YES  |     | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+
+
+mysql> insert into collegedet values (1,'Raja','Computer','21/05/98',8000,'M'),(2,'Sangita','History','21/05/97',9000,'F'),(3,'Ritu','Sociology','29/08/98',8000,'F'),(4,'Kumar','Linguistics','13/06/96',10000,'M'),(5,'Venkat','History','31/10/99',8000,'M'),(6,'Sidhu','Computer','21/05/86','14000','M'),(7,'Aishwarya','Sociology','11/01/88',12000,'F');
+Query OK, 7 rows affected (0.07 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from collegedet;
++----+-----------+-------------+---------------+--------+------+
+| No | Name      | Department  | dateofjoining | salary | Sex  |
++----+-----------+-------------+---------------+--------+------+
+|  1 | Raja      | Computer    | 21/05/98      |   8000 | M    |
+|  2 | Sangita   | History     | 21/05/97      |   9000 | F    |
+|  3 | Ritu      | Sociology   | 29/08/98      |   8000 | F    |
+|  4 | Kumar     | Linguistics | 13/06/96      |  10000 | M    |
+|  5 | Venkat    | History     | 31/10/99      |   8000 | M    |
+|  6 | Sidhu     | Computer    | 21/05/86      |  14000 | M    |
+|  7 | Aishwarya | Sociology   | 11/01/88      |  12000 | F    |
++----+-----------+-------------+---------------+--------+------+
+7 rows in set (0.00 sec)
+
+
+mysql> select * from collegedet where department='Computer';
++----+-------+------------+---------------+--------+------+
+| No | Name  | Department | dateofjoining | salary | Sex  |
++----+-------+------------+---------------+--------+------+
+|  1 | Raja  | Computer   | 21/05/98      |   8000 | M    |
+|  6 | Sidhu | Computer   | 21/05/86      |  14000 | M    |
++----+-------+------------+---------------+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from collegedet where Sex='F';
++----+-----------+------------+---------------+--------+------+
+| No | Name      | Department | dateofjoining | salary | Sex  |
++----+-----------+------------+---------------+--------+------+
+|  2 | Sangita   | History    | 21/05/97      |   9000 | F    |
+|  3 | Ritu      | Sociology  | 29/08/98      |   8000 | F    |
+|  7 | Aishwarya | Sociology  | 11/01/88      |  12000 | F    |
++----+-----------+------------+---------------+--------+------+
+3 rows in set (0.00 sec)
+
+
+
+mysql> select * from collegedet order by dateofjoining;
++----+-----------+-------------+---------------+--------+------+
+| No | Name      | Department  | dateofjoining | salary | Sex  |
++----+-----------+-------------+---------------+--------+------+
+|  7 | Aishwarya | Sociology   | 11/01/88      |  12000 | F    |
+|  4 | Kumar     | Linguistics | 13/06/96      |  10000 | M    |
+|  6 | Sidhu     | Computer    | 21/05/86      |  14000 | M    |
+|  2 | Sangita   | History     | 21/05/97      |   9000 | F    |
+|  1 | Raja      | Computer    | 21/05/98      |   8000 | M    |
+|  3 | Ritu      | Sociology   | 29/08/98      |   8000 | F    |
+|  5 | Venkat    | History     | 31/10/99      |   8000 | M    |
++----+-----------+-------------+---------------+--------+------+
+
+
+
+mysql> select Name,department,salary from collegedet where salary<10000;
++---------+------------+--------+
+| Name    | department | salary |
++---------+------------+--------+
+| Raja    | Computer   |   8000 |
+| Sangita | History    |   9000 |
+| Ritu    | Sociology  |   8000 |
+| Venkat  | History    |   8000 |
++---------+------------+--------+
+
+
+
+mysql> insert into collegedet (8,'Mersha','Computer','1/1/2000',12000,'m');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '8,'Mersha','Computer','1/1/2000',12000,'m')' at line 1
+mysql> insert into collegedet values(8,'Mersha','Computer','1/1/2000',12000,'m');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from collegedet;
++----+-----------+-------------+---------------+--------+------+
+| No | Name      | Department  | dateofjoining | salary | Sex  |
++----+-----------+-------------+---------------+--------+------+
+|  1 | Raja      | Computer    | 21/05/98      |   8000 | M    |
+|  2 | Sangita   | History     | 21/05/97      |   9000 | F    |
+|  3 | Ritu      | Sociology   | 29/08/98      |   8000 | F    |
+|  4 | Kumar     | Linguistics | 13/06/96      |  10000 | M    |
+|  5 | Venkat    | History     | 31/10/99      |   8000 | M    |
+|  6 | Sidhu     | Computer    | 21/05/86      |  14000 | M    |
+|  7 | Aishwarya | Sociology   | 11/01/88      |  12000 | F    |
+
+
+mysql> select name,min(salary) from collegedet group by salary;
++-----------+-------------+
+| name      | min(salary) |
++-----------+-------------+
+| Raja      |        8000 |
+| Sangita   |        9000 |
+| Kumar     |       10000 |
+| Sidhu     |       14000 |
+| Aishwarya |       12000 |
++-----------+-------------+
+
+
+
+mysql> select avg(salary) from collegedet where department='history';
++-------------+
+| avg(salary) |
++-------------+
+|   8500.0000 |
++-------------+
